@@ -51,7 +51,7 @@ export default function PrimarySearchAppBar({ open, setOpen, subMenu }) {
               sx={{ display: { sm: `${open ? "flex" : "none"}`, lg: "flex" } }}
               onClick={() => navigate("/")}
             >
-              METRICATEST
+              METRICA
             </SC.LogoTypographyStyled>
             <SC.MenuButton
               size="medium"
