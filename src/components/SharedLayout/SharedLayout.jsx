@@ -33,6 +33,9 @@ const SharedLayout = ({ children }) => {
               display: "flex",
               flexDirection: "column",
               flexGrow: 1,
+              // backgroundColor: "rgba(0,0,0,0.1)",
+              // boxShadow: "inset 0 0 10px 0px rgba(0,0,0,0.3)",
+              // border: "3px solid #000",
               height: "max-content",
               minHeight: "100%",
               padding: {
@@ -40,7 +43,7 @@ const SharedLayout = ({ children }) => {
                 lg: ` ${open ? "13px 20px 20px 0" : "13px 20px 20px 20px"}`,
                 xl: "13px 20px 20px 0",
               },
-              // marginRight: { xl: "16px" },
+              marginRight: { xl: "16px" },
               borderRadius: { lg: "12px" },
               borderBottomLeftRadius: "0",
               borderBottomRightRadius: "0",

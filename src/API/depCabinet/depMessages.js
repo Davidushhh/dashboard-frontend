@@ -1,7 +1,7 @@
 import axios from "axios";
 
 axios.defaults.baseURL =
-  "https://testserver.digital-zakarpattia.com.ua/api/cabinet/user-messages-join";
+  "https://testserver.digital-zakarpattia.com.ua/api/cabinet/user-messages";
 
 export async function getDepMessages(token) {
   try {

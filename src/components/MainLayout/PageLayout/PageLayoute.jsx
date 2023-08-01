@@ -10,56 +10,102 @@ import { ChartGroupContainer } from "./ChartGroupContainer/ChartGroupContainer";
 const PageLayoute = () => {
   const [setSubMenu] = useOutletContext();
 
+  const [currentPage, setCurrentPage] = useState("");
   const [currentPageConfig, setCurrentPageConfig] = useState(null);
   const [chartsGroups, setChartsGroups] = useState([]);
-  const [subNav, setSubNav] = useState([]);
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
-
-  const params = useParams();
-
+  console.log("currentPageConfig", currentPageConfig);
+  const { page, sub, group } = useParams();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    if (group) {
+      setCurrentPage("group");
+      return;
+    }
+    if (sub) {
+      setCurrentPage("sub");
+      return;
+    }
+    if (page) {
+      setCurrentPage("page");
+      return;
+    }
+  }, [page, sub, group]);
 
   useEffect(() => {
     setSubMenu(metricaPages);
   }, [setSubMenu]);
 
   useEffect(() => {
-    const pageParams = Object.entries(params);
-    if (pageParams.length === 0) {
-      navigate("/404");
-      return;
-    }
-
-    const pageConfig = pageParams.reduce((acc, elem, index) => {
-      if (index === 0) {
-        return acc.find((item) => item.id === elem[1]);
+    if (currentPage) {
+      let data = {};
+      if (page) {
+        data = metricaPages.find((elem) => elem.id === page);
+        if (!data) navigate("/404");
       }
-      let newAcc = acc.children.find((item) => item.id === elem[1]);
-      if (elem[0] === "sub" && newAcc?.children) {
-        setSubNav(newAcc.children);
-      } else if (elem[0] === "sub" && !newAcc?.children) {
-        setSubNav([]);
+      if (sub) {
+        data = data.children.find((elem) => elem.id === sub);
+        if (!data) navigate("/404");
+      }
+      if (group) {
+        const res = data.children.find((elem) => elem.id === group);
+        if (!res) navigate("/404");
       }
 
-      return newAcc;
-    }, metricaPages);
-
-    if (!pageConfig) {
-      navigate("/404");
-      return;
+      setCurrentPageConfig(data);
     }
-    setCurrentPageConfig(pageConfig);
-    setChartsGroups(pageConfig?.chartsGroups || []);
-  }, [navigate, params]);
+
+    return () => {
+      setCurrentPageConfig(null);
+    };
+  }, [currentPage, group, navigate, page, sub]);
+
+  useEffect(() => {
+    if (currentPage) {
+      let data = {};
+      if (page) {
+        data = metricaPages.find((elem) => elem.id === page);
+      }
+      if (sub) {
+        data = data.children.find((elem) => elem.id === sub);
+      }
+      if (group) {
+        data = data.children.find((elem) => elem.id === group);
+      }
+      data.chartsGroups?.length > 0
+        ? setChartsGroups(data.chartsGroups)
+        : setChartsGroups([]);
+    }
+
+    return () => {
+      setChartsGroups([]);
+    };
+  }, [currentPage, group, page, sub]);
+
+  useEffect(() => {
+    if (currentPageConfig && currentPageConfig.children) {
+      if (currentPage === "sub" && currentPageConfig.children.length > 0) {
+        navigate(currentPageConfig.children[0].url);
+      }
+      if (currentPage === "group" && currentPageConfig.children.length > 0) {
+        const index = currentPageConfig.children.findIndex(
+          (elem) => elem.id === group
+        );
+        if (index < 0) return;
+        setValue(index);
+      }
+    }
+  }, [currentPage, currentPageConfig, group, navigate]);
 
   return (
     <SC.PageLayoutContainerStyled>
       {currentPageConfig && (
         <>
-          {subNav.length > 0 && (
+          {currentPageConfig.children && (
             <SC.PageLayoutTabsContainerStyled>
               <Box sx={{ maxWidth: "100%" }}>
                 <SC.PageLayoutTabs
@@ -69,7 +115,7 @@ const PageLayoute = () => {
                   scrollButtons="auto"
                   aria-label="scrollable auto tabs example"
                 >
-                  {subNav.map((item) => (
+                  {currentPageConfig?.children?.map((item) => (
                     <SC.PageLayoutTab
                       key={item?.id}
                       label={item?.title}
@@ -107,68 +153,3 @@ const PageLayoute = () => {
 };
 
 export default PageLayoute;
-
-// useEffect(() => {
-//   if (group) {
-//     setCurrentPage("group");
-//     return;
-//   }
-//   if (sub) {
-//     setCurrentPage("sub");
-//     return;
-//   }
-//   if (page) {
-//     setCurrentPage("page");
-//     return;
-//   }
-// }, [page, sub, group]);
-
-// useEffect(() => {
-//   setSubMenu(metricaPages);
-// }, [setSubMenu]);
-
-// useEffect(() => {
-//   if (currentPage) {
-//     let data = {};
-//     if (page) {
-//       data = metricaPages.find((elem) => elem.id === page);
-//       if (!data) navigate("/404");
-//     }
-//     if (sub) {
-//       data = data.children.find((elem) => elem.id === sub);
-//       if (!data) navigate("/404");
-//     }
-//     if (group) {
-//       const res = data.children.find((elem) => elem.id === group);
-//       if (!res) navigate("/404");
-//     }
-
-//     setCurrentPageConfig(data);
-//   }
-
-//   return () => {
-//     setCurrentPageConfig(null);
-//   };
-// }, [currentPage, group, navigate, page, sub]);
-
-// useEffect(() => {
-//   if (currentPage) {
-//     let data = {};
-//     if (page) {
-//       data = metricaPages.find((elem) => elem.id === page);
-//     }
-//     if (sub) {
-//       data = data.children.find((elem) => elem.id === sub);
-//     }
-//     if (group) {
-//       data = data.children.find((elem) => elem.id === group);
-//     }
-//     data.chartsGroups?.length > 0
-//       ? setChartsGroups(data.chartsGroups)
-//       : setChartsGroups([]);
-//   }
-
-//   return () => {
-//     setChartsGroups([]);
-//   };
-// }, [currentPage, group, page, sub]);

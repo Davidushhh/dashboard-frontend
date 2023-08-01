@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { LoaderBig } from "components/Loader";
 
 export const Login = () => {
-  const [login, { isLoading }] = useLoginMutation();
+  const [login, { isLoading, isSuccess }] = useLoginMutation();
   const navigate = useNavigate();
 
   const formik = useFormik({

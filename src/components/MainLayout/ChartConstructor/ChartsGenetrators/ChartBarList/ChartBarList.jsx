@@ -6,9 +6,13 @@ import * as SC from "./ChartBarList.styled";
 export const ChartBarList = ({ chartConfig, filter }) => {
   const [currentSeries, setCurrentSeries] = useState([]);
   const [barHeight, setBarHeight] = useState(0);
-
+  console.log(
+    chartConfig.options.xaxis.categories.length,
+    chartConfig.series.length
+  );
   useEffect(() => {
     if (chartConfig?.series) {
+      console.log(chartConfig.series);
       setCurrentSeries(chartConfig.series);
     }
     if (chartConfig?.data) {
@@ -48,7 +52,7 @@ export const ChartBarList = ({ chartConfig, filter }) => {
       >
         {Array.isArray(currentSeries) && (
           <SC.ChartBarListStyled
-            options={{ ...chartConfig.options, colors: ["#55A5B7"] }}
+            options={chartConfig.options}
             series={currentSeries}
             type={"bar"}
             height={`${barHeight}px`}

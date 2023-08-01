@@ -26,6 +26,7 @@ export const FilterSelects = ({
       }
       setUserFilterPosition(position);
     }
+    console.log("userFilterPosition", userFilterPosition);
   }, [filterSelects, user, userFilterPosition]);
 
   useEffect(() => {

@@ -97,7 +97,7 @@ export const CahrtConstructorWrapper = styled(Box)((props) => ({
   // paddingTop: "6px",
   display: "flex",
   flexDirection: "column",
-  backgroundColor: "#B3E0EA",
+  backgroundColor: "#55A5B7",
   borderRadius: "20px",
   overflow: "hidden",
   position: "relative",

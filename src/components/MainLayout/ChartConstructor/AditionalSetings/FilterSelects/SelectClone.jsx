@@ -18,6 +18,7 @@ export const SelectClone = ({
   const [value, setValue] = useState("");
   const [currentData, setCurrentData] = useState(data);
   const { id, title, position, subSelect } = selectConfig;
+  console.log("selectConfig.target", data);
 
   useEffect(() => {
     if (data) {

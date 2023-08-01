@@ -15,7 +15,7 @@ import { useLogoutMutation } from "redux/auth/authAPI";
 export const MobileProfileMenu = ({ mobileMenuId }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
-  const [logout] = useLogoutMutation();
+  const [logout, { isLoading }] = useLogoutMutation();
 
   const open = Boolean(anchorEl);
 

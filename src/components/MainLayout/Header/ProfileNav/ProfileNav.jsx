@@ -51,7 +51,6 @@ export const ProfileNav = ({
             aria-haspopup="true"
             onClick={handleProfileMenuOpen}
             color="inherit"
-            sx={{ mr: "0" }}
           >
             <AccountCircle />
           </IconButton>

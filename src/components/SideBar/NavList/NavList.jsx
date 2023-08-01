@@ -7,6 +7,8 @@ import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
 export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
   const [currentNav, setCurrentNav] = useState("");
 
+  console.log("subMENU", subMenu);
+
   if (subMenu)
     return (
       <List

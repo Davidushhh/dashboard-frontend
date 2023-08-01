@@ -29,7 +29,7 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
         setCurrentPage(title);
     }
   }, [navigate, params, subMenu]);
-
+  console.log("currentPage", currentPage);
   return (
     <Box sx={{ display: { xs: `${open ? "none" : "block"}`, lg: "block" } }}>
       <Typography

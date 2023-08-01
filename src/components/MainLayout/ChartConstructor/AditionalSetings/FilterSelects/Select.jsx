@@ -32,6 +32,7 @@ export const Select = ({
         setCurrentData({
           [user[selectConfig.target]]: data[user[selectConfig.target]],
         });
+        console.log("user[selectConfig.target]", user[selectConfig.target]);
         setValue(user[selectConfig.target]);
       } else {
         setCurrentData(data);
@@ -44,6 +45,7 @@ export const Select = ({
     user,
     userFilterPosition,
   ]);
+  console.log("currentData", value);
   useEffect(() => {
     if (currentData) setValue(Object.keys(currentData)[0]);
   }, [currentData]);

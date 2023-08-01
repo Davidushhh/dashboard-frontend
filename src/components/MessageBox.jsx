@@ -9,8 +9,7 @@ export const MessageBox = ({ errorCode, text }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        border: "3px solid #000",
-        borderRadius: "20px",
+        borderRadius: "12px",
         width: { sm: "280px", lg: "400px" },
         height: { sm: "180px", lg: "300px" },
         boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)",
@@ -19,10 +18,9 @@ export const MessageBox = ({ errorCode, text }) => {
     >
       <Typography
         sx={{
-          fontFamily: "e-Ukraine",
           fontSize: { sm: "28px", lg: "36px" },
-          fontWeight: "regular",
-          color: "#000",
+          fontWeight: "bold",
+          color: "rgba(94, 53, 77, 0.6)",
           textAlign: "center",
           display: "flex",
           flexDirection: "column",

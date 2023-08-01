@@ -7,6 +7,7 @@ import * as SC from "./ChartGroupContainer.styled";
 export const ChartGroupContainer = ({ chartGroup }) => {
   const [groupFilter, setGroupFilter] = useState([]);
   const [isDragable, setIsDragable] = useState(false);
+  console.log("isDragable", isDragable);
   return (
     <SC.BoxChartContainerStyled>
       <SC.BoxTitleContainerStyled>
