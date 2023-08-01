@@ -29,7 +29,12 @@ export const PageLayoutTabsContainerStyled = styled(Box)((props) => ({
 
 export const PageLayoutTabs = styled(Tabs)((props) => ({
   "& .MuiTabs-indicator": {
-    backgroundColor: "transparent",
+    backgroundColor: "#B3E0EA",
+    border: "3px solid #B3E0EA",
+    height: "80%",
+    top: "50%",
+    transform: "translateY(-50%)",
+    borderRadius: "12px",
   },
 }));
 
@@ -42,5 +47,6 @@ export const PageLayoutTab = styled(Tab)((props) => ({
 
   "&.Mui-selected": {
     color: "#000",
+    zIndex: "3",
   },
 }));

@@ -34,7 +34,7 @@ export default function PrimarySearchAppBar({ open, setOpen, subMenu }) {
           backgroundColor: "#fff",
         }}
       >
-        <Toolbar sx={{ p: "16px 32px" }}>
+        <Toolbar sx={{ p: "16px 32px", pr: { lg: "32px" } }}>
           <Box
             sx={{
               display: "flex",

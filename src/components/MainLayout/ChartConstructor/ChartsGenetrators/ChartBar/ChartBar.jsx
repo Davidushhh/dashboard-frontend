@@ -24,7 +24,10 @@ export const ChartBar = ({ chartConfig, filter }) => {
       setCurrentSeries(newSeries);
     }
   }, [chartConfig, filter]);
-
+  console.log("asdasdasdmgfhgfjhfgjhfjh", {
+    ...chartConfig.options,
+    fill: ["#B3E0EA"],
+  });
   if (!chartConfig.options) {
     return <div>no data</div>;
   }
@@ -32,7 +35,7 @@ export const ChartBar = ({ chartConfig, filter }) => {
     <SC.BoxChartBarStyled>
       {Array.isArray(currentSeries) && (
         <SC.ChartBarStyled
-          options={chartConfig.options}
+          options={{ ...chartConfig.options, colors: ["#55A5B7"] }}
           series={currentSeries}
           type={chartConfig.type}
           height={"100%"}

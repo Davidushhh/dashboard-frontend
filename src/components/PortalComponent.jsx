@@ -7,7 +7,6 @@ const PortalComponent = ({ children, id }) => {
     const portalElement = document.getElementById(id);
     if (portalElement) setRef(portalElement);
   }, [id]);
-  console.log("ref", ref);
   if (ref) return ReactDOM.createPortal(children, ref);
 };
 

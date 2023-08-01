@@ -7,6 +7,7 @@ const initialState = {
   user: null,
   error: null,
   loading: false,
+  isLogin: false,
 };
 
 export const authSlice = createSlice({
@@ -16,6 +17,7 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.token = null;
       state.user = null;
+      state.isLogin = false;
     },
   },
   extraReducers: (builder) => {
@@ -24,12 +26,14 @@ export const authSlice = createSlice({
       (state, action) => {
         state.token = action.payload.token;
         state.user = action.payload.data.user;
+        state.isLogin = true;
       }
     );
     builder.addMatcher(
       authApi.endpoints.currentUser.matchFulfilled,
       (state, action) => {
         state.user = action.payload.data.user;
+        state.isLogin = true;
       }
     );
     builder.addMatcher(
@@ -37,6 +41,7 @@ export const authSlice = createSlice({
       (state, action) => {
         state.user = null;
         state.token = null;
+        state.isLogin = false;
       }
     );
     builder.addMatcher(
@@ -44,6 +49,7 @@ export const authSlice = createSlice({
       (state, action) => {
         state.token = null;
         state.user = null;
+        state.isLogin = false;
       }
     );
   },
@@ -52,3 +58,4 @@ export const authSlice = createSlice({
 //selectors
 export const selectToken = (state) => state?.auth?.token;
 export const selectUser = (state) => state?.auth?.user;
+export const selectIsLogin = (state) => state?.auth?.isLogin;
