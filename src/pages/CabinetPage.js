@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import CabinetLayout from "components/Cabinet/CabinetLayout";
+import CabinetLayout from "components/MainLayout/Cabinet/CabinetLayout";
 
 export const CabinetPage = () => {
   return (
@@ -10,6 +10,7 @@ export const CabinetPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        gap: "20px",
       }}
     >
       <CabinetLayout />

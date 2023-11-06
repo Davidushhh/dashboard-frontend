@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { Suspense } from "react";
 import Box from "@mui/material/Box";
 import { Outlet } from "react-router-dom";
-import Header from "../MainLayout/Header";
-import SideBar from "../SideBar/SideBar";
+import Header from "./Header";
+import SideBar from "./SideBar/SideBar";
+import { setPerson } from "redux/person/personSlice";
+import { useDispatch } from "react-redux";
 
-const SharedLayout = ({ children }) => {
+const SharedLayout = ({ person, children }) => {
   const [open, setOpen] = useState(false);
   const [subMenu, setSubMenu] = useState(null);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setPerson(person));
+  }, [dispatch, person]);
 
   return (
     <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
@@ -19,12 +26,17 @@ const SharedLayout = ({ children }) => {
           height: "calc(100% - 86px)",
         }}
       >
-        <SideBar open={open} setOpen={setOpen} subMenu={subMenu} />
+        <SideBar
+          person={person}
+          open={open}
+          setOpen={setOpen}
+          subMenu={subMenu}
+        />
         <Box
           sx={{
             display: "flex",
             flexGrow: 1,
-            overflow: "scroll",
+            overflowY: "scroll",
           }}
         >
           <Box
@@ -33,14 +45,14 @@ const SharedLayout = ({ children }) => {
               display: "flex",
               flexDirection: "column",
               flexGrow: 1,
-              // backgroundColor: "rgba(0,0,0,0.1)",
-              // boxShadow: "inset 0 0 10px 0px rgba(0,0,0,0.3)",
-              // border: "3px solid #000",
               height: "max-content",
               minHeight: "100%",
-              padding: { sm: "8px", lg: "20px" },
-              // marginTop: "4px",
-              marginRight: "16px",
+              padding: {
+                xs: "8px",
+                lg: ` ${open ? "13px 20px 20px 0" : "13px 20px 20px 20px"}`,
+                xl: "13px 20px 20px 0",
+              },
+              // marginRight: { xl: "16px" },
               borderRadius: { lg: "12px" },
               borderBottomLeftRadius: "0",
               borderBottomRightRadius: "0",

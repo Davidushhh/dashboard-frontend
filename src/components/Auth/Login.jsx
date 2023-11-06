@@ -1,8 +1,8 @@
 import * as SC from "./Login.styled";
 import { useFormik } from "formik";
-import { useLoginMutation } from "redux/auth/authAPI";
+import { useLoginMutation } from "redux/API/authApi";
 import { useNavigate } from "react-router-dom";
-import { LoaderBig } from "components/Loader";
+import { LoaderBig } from "components/MainLayout/Loader";
 
 export const Login = () => {
   const [login, { isLoading }] = useLoginMutation();
@@ -15,8 +15,8 @@ export const Login = () => {
     },
     onSubmit: async (values) => {
       try {
-        await login(values);
-        navigate("/metrica/home/all");
+        await login(values).unwrap();
+        navigate("/cabinet");
       } catch (error) {
         console.log(error);
       }

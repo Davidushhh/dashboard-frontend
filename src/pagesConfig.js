@@ -9,18 +9,27 @@ import {
   AttachMoney,
   QueryStats,
   MailOutline,
-  Subject,
-  HowToVote,
 } from "@mui/icons-material";
 
 import { nanoid } from "nanoid";
 
 export const mainPages = [
   {
-    id: "metrica",
-    title: "METRICA",
-    menuTitle: "METRICA",
-    url: "/metrica",
+    id: "analytics",
+    title: "Аналітика",
+    menuTitle: "Аналітика",
+    url: "/analytics/home/all",
+    type: "noCollapse",
+    icon: <QueryStats />,
+    color: "#FF6931",
+  },
+];
+export const mainPagesCabinet = [
+  {
+    id: "analytics",
+    title: "Аналітика",
+    menuTitle: "Аналітика",
+    url: "/cabinet/analytics/home/all",
     type: "noCollapse",
     icon: <QueryStats />,
     color: "#FF6931",
@@ -42,7 +51,7 @@ export const metricaPages = [
         title: "Головна",
         menuTitle: "Головна",
         type: "item",
-        url: "/metrica/home/all",
+        url: "/analytics/home/all",
         target: true,
 
         chartsGroups: [
@@ -54,6 +63,7 @@ export const metricaPages = [
                 size: "sl",
                 location: { x: 0, y: 0 },
                 title: "Цифровізація",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -86,6 +96,7 @@ export const metricaPages = [
                 size: "sl",
                 location: { x: 6, y: 0 },
                 title: "Інфраструктура",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -118,6 +129,7 @@ export const metricaPages = [
                 size: "sl",
                 location: { x: 0, y: 2 },
                 title: "Охорона здоров'я",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -150,6 +162,7 @@ export const metricaPages = [
                 size: "sl",
                 location: { x: 6, y: 2 },
                 title: "Освіта",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -182,6 +195,7 @@ export const metricaPages = [
                 size: "sl",
                 location: { x: 0, y: 4 },
                 title: "Економіка",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -229,7 +243,7 @@ export const metricaPages = [
         title: "ЦНАП",
         menuTitle: "ЦНАП",
         type: "item",
-        url: "/metrica/digitalization/cnap",
+        url: "/analytics/digitalization/cnap",
         target: true,
         children: [
           {
@@ -248,6 +262,7 @@ export const metricaPages = [
                     size: "m",
                     title: "Усі центри",
                     location: { x: 0, y: 0 },
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -272,7 +287,7 @@ export const metricaPages = [
                         },
                         legend: {
                           labels: {
-                            colors: "#000т",
+                            colors: "#000",
                           },
                           position: "top",
                         },
@@ -392,6 +407,7 @@ export const metricaPages = [
                     size: "mtl",
                     location: { x: 4, y: 0 },
                     title: "ЦНАПи",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -540,6 +556,7 @@ export const metricaPages = [
                     size: "sl",
                     location: { x: 0, y: 0 },
                     title: "Рейтинг по районам",
+                    public: false,
                     chartConfig: {
                       options: {
                         chart: {
@@ -579,6 +596,7 @@ export const metricaPages = [
                     size: "sl",
                     location: { x: 6, y: 0 },
                     title: "Топ 5 громад",
+                    public: false,
                     chartConfig: {
                       options: {
                         chart: {
@@ -617,6 +635,7 @@ export const metricaPages = [
                     size: "mtl",
                     location: { x: 0, y: 4 },
                     title: "Перегляд по окремим районам та громадам",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -914,6 +933,7 @@ export const metricaPages = [
                     location: { x: 0, y: 8 },
                     title:
                       "Наявні рішення для обслуговування осіб з порушенням зору ",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -1200,6 +1220,7 @@ export const metricaPages = [
                     location: { x: 8, y: 4 },
                     title:
                       "Наявні рішення для обслуговування осіб з порушенням слуху ",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -1515,6 +1536,7 @@ export const metricaPages = [
                     id: "b",
                     size: "s",
                     location: { x: 1, y: 0 },
+                    public: true,
                     chartConfig: {
                       options: {
                         text: "Передбачене фінансування",
@@ -1615,6 +1637,7 @@ export const metricaPages = [
                     size: "sl",
                     location: { x: 6, y: 0 },
                     title: "Програма доступності",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -1729,6 +1752,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 0, y: 2 },
                     title: "Вуличні перехрестя",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -1843,6 +1867,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 4, y: 2 },
                     title: "Адмінбудівлі владних структур",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -1957,6 +1982,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 8, y: 2 },
                     title: "Об'єкти соціального захисту",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -2071,6 +2097,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 0, y: 4 },
                     title: "План заходів",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -2185,6 +2212,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 4, y: 4 },
                     title: "Об'єкти охорони здоров'я",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -2299,6 +2327,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 8, y: 4 },
                     title: "Заклади освіти",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -2413,6 +2442,7 @@ export const metricaPages = [
                     size: "s",
                     location: { x: 4, y: 6 },
                     title: "Об'єкти укриття",
+                    public: true,
                     chartConfig: {
                       options: {
                         chart: {
@@ -2545,7 +2575,7 @@ export const metricaPages = [
         title: "Є-документи",
         menuTitle: "Є-документи",
         type: "item",
-        url: "/metrica/education/e-document",
+        url: "/analytics/education/e-document",
         target: true,
         chartsGroups: [
           {
@@ -2556,6 +2586,7 @@ export const metricaPages = [
                 size: "mtl",
                 location: { x: 0, y: 0 },
                 title: "е-Щоденник",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -2687,6 +2718,7 @@ export const metricaPages = [
                 size: "mtl",
                 location: { x: 6, y: 0 },
                 title: "е-Журнал",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -2835,7 +2867,7 @@ export const metricaPages = [
         title: "Придатність укриттів",
         menuTitle: "Придатність укриттів",
         type: "item",
-        url: "/metrica/shelters/suitability",
+        url: "/analytics/shelters/suitability",
         target: true,
 
         chartsGroups: [
@@ -2846,6 +2878,7 @@ export const metricaPages = [
                 id: "a",
                 size: "s",
                 location: { x: 0, y: 0 },
+                public: true,
                 chartConfig: {
                   options: {
                     text: "Загальна кількість укриттів",
@@ -2859,6 +2892,7 @@ export const metricaPages = [
                 size: "lh",
                 location: { x: 4, y: 0 },
                 title: "Безперешкодність та доступність укриттів",
+                public: true,
                 chartConfig: {
                   options: {
                     chart: {
@@ -3011,133 +3045,8 @@ export const metricaPages = [
         title: "Рейтинг голів громад",
         menuTitle: "Рейтинг голів громад",
         type: "item",
-        url: "/metrica/finances/heads-rating",
+        url: "/analytics/finances/heads-rating",
         target: true,
-
-        chartsGroups: [
-          {
-            title: "Загальний рейтинг голів громад",
-            charts: [
-              {
-                id: "a",
-                size: "s",
-                location: { x: 0, y: 0 },
-                chartConfig: {
-                  options: {
-                    text: "Середнє значення",
-                  },
-                  series: 3.86,
-                  type: "single",
-                },
-              },
-              {
-                id: "b",
-                size: "lh",
-                location: { x: 4, y: 0 },
-                title: "Загальний рейтинг голів громад",
-                chartConfig: {
-                  options: {
-                    chart: {
-                      id: "bar-chart",
-                    },
-                    plotOptions: {
-                      bar: {
-                        horizontal: true,
-                      },
-                    },
-
-                    xaxis: {
-                      labels: {
-                        minHeight: 20,
-                      },
-                      categories: [
-                        "Кольчинська ТГ",
-                        "Верхньокоропецька ТГ",
-                        "Петерфолвівська ТГ",
-                        "Батівська ТГ",
-                        "Мукачівська ТГ",
-                        "Оноківська ТГ",
-                        "Сюртівська ТГ",
-                        "Великоберезнянська ТГ",
-                        "Іршавська ТГ",
-                        "Тячівська ТГ",
-                        "Великолучівська ТГ",
-                        "Горондівська ТГ",
-                        "Чинадіївська ТГ",
-                        "Нересницька ТГ",
-                        "Перечинська ТГ",
-                        "Чопська ТГ",
-                        "Середнянська ТГ",
-                        "Ужгородська ТГ",
-                        "Великодобронська ТГ",
-                        "Великоберезька ТГ",
-                        "Солотвинська ТГ",
-                        "Холмківська ТГ",
-                        "Драгівська ТГ",
-                        "Великобийганська ТГ",
-                        "Камянська ТГ",
-                        "Косоньська ТГ",
-                        "Івановецька ТГ",
-                        "Неліпинська ТГ",
-                        "Нижньоворотьська ТГ",
-                        "Воловецька ТГ",
-                        "Рахівська ТГ",
-                        "Богданська ТГ",
-                        "Бедевлянська ТГ",
-                        "Буштинська ТГ",
-                        "Тересвянська ТГ",
-                        "Турє-Реметівська ТГ",
-                        "Дубриницько-Малоберезнянська ТГ",
-                        "Пилипецька ТГ",
-                        "Хустська ТГ",
-                        "Міжгірська ТГ",
-                        "Вилоцька ТГ",
-                        "Королівська ТГ",
-                        "Жденіївська ТГ",
-                        "Усть-Чорнянська ТГ",
-                        "Углянська ТГ",
-                        "Дубівська ТГ",
-                        "Керецьківська ТГ",
-                        "Довжанська ТГ",
-                        "Синевирська ТГ",
-                        "Білківська ТГ",
-                        "Виноградівська ТГ",
-                        "Полянська ТГ",
-                        "Великобичківська ТГ",
-                        "Ясінянська ТГ",
-                        "Вільховецька ТГ",
-                        "Костринська ТГ",
-                        "Ставненська ТГ",
-                        "Баранинська ТГ",
-                        "Зарічанська ТГ",
-                        "Горінчівська ТГ",
-                        "Колочавська ТГ",
-                        "Вишківська ТГ",
-                        "Берегівська ТГ",
-                        "Свалявська ТГ",
-                      ],
-                    },
-                  },
-                  series: [
-                    {
-                      data: [
-                        8, 7, 6.5, 6, 6, 6, 6, 6, 6, 5.5, 5, 5, 5, 5, 5, 5, 5,
-                        5, 5, 4.5, 4.5, 4.5, 4.5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-                        4, 4, 4, 4, 4, 4, 3.5, 3, 3, 3, 3, 3, 3, 3, 3, 2.5, 2.5,
-                        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1.5, 1.5, 1, 1,
-                      ],
-                    },
-                  ],
-                  type: "list",
-                  aditionalSetings: {
-                    singleInfo: null,
-                    filterSelects: [],
-                  },
-                },
-              },
-            ],
-          },
-        ],
       },
     ],
   },
@@ -3145,17 +3054,17 @@ export const metricaPages = [
     id: "infrastructure",
     title: "Інфраструктура",
     menuTitle: "Інфраструктура",
-    type: "noCollapse",
+    type: "collapse",
     icon: <Apartment />,
     color: "#82B2EF",
 
     children: [
       {
-        id: "all",
-        title: "Інфраструктура - загальна",
-        menuTitle: "Загальна",
+        id: "zhkh",
+        title: "ЖКГ",
+        menuTitle: "ЖКГ",
         type: "item",
-        url: "/metrica/infrastructure/all",
+        url: "/analytics/infrastructure/zhkh",
         target: true,
       },
     ],
@@ -3174,7 +3083,7 @@ export const metricaPages = [
         title: "Охорона здоров'я - загальна",
         menuTitle: "Загальна",
         type: "item",
-        url: "/metrica/healthcare/all",
+        url: "/analytics/healthcare/all",
         target: true,
       },
     ],
@@ -3193,7 +3102,2843 @@ export const metricaPages = [
         title: "Економіка - загальна",
         menuTitle: "Загальна",
         type: "item",
-        url: "/metrica/economy/all",
+        url: "/analytics/economy/all",
+        target: true,
+      },
+    ],
+  },
+];
+export const metricaPagesCabinet = [
+  {
+    id: "home",
+    title: "Головна",
+    menuTitle: "Головна",
+    type: "noCollapse",
+    icon: <Home />,
+    color: "#FF6931",
+
+    children: [
+      {
+        id: "all",
+        title: "Головна",
+        menuTitle: "Головна",
+        type: "item",
+        url: "/cabinet/analytics/home/all",
+        target: true,
+
+        chartsGroups: [
+          {
+            title: "Оцінка виконання завдань по структурних підрозділах",
+            charts: [
+              {
+                id: "b",
+                size: "sl",
+                location: { x: 0, y: 0 },
+                title: "Цифровізація",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Виконано", "План на 01.01.2024"],
+                    },
+                  },
+                  series: [
+                    {
+                      data: [80, 100],
+                    },
+                  ],
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [],
+                  },
+                },
+              },
+              {
+                id: "с",
+                size: "sl",
+                location: { x: 6, y: 0 },
+                title: "Інфраструктура",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Виконано", "План на 01.01.2024"],
+                    },
+                  },
+                  series: [
+                    {
+                      data: [72, 100],
+                    },
+                  ],
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [],
+                  },
+                },
+              },
+              {
+                id: "o",
+                size: "sl",
+                location: { x: 0, y: 2 },
+                title: "Охорона здоров'я",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Виконано", "План на 01.01.2024"],
+                    },
+                  },
+                  series: [
+                    {
+                      data: [66, 100],
+                    },
+                  ],
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [],
+                  },
+                },
+              },
+              {
+                id: "s",
+                size: "sl",
+                location: { x: 6, y: 2 },
+                title: "Освіта",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Виконано", "План на 01.01.2024"],
+                    },
+                  },
+                  series: [
+                    {
+                      data: [74, 100],
+                    },
+                  ],
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [],
+                  },
+                },
+              },
+              {
+                id: "t",
+                size: "sl",
+                location: { x: 0, y: 4 },
+                title: "Економіка",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Виконано", "План на 01.01.2024"],
+                    },
+                  },
+                  series: [
+                    {
+                      data: [79, 100],
+                    },
+                  ],
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "digitalization",
+    title: "Цифровізація",
+    menuTitle: "Цифровізація",
+    type: "collapse",
+    icon: <Dvr />,
+    color: "#55A5B7",
+
+    children: [
+      {
+        id: "cnap",
+        title: "ЦНАП",
+        menuTitle: "ЦНАП",
+        type: "item",
+        url: "/cabinet/analytics/digitalization/cnap",
+        target: true,
+        children: [
+          {
+            id: "net",
+            title: "Мережа",
+            menuTitle: "Мережа",
+            type: "item",
+            url: "cnap/net",
+            target: true,
+            chartsGroups: [
+              {
+                title: "Стан утворення мережі центрів",
+                charts: [
+                  {
+                    id: "a",
+                    size: "m",
+                    title: "Усі центри",
+                    location: { x: 0, y: 0 },
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "donut-chart",
+                        },
+
+                        dataLabels: {
+                          enabled: true,
+                          formatter: function (
+                            value,
+                            { seriesIndex, dataPointIndex, w }
+                          ) {
+                            return w.config.series[seriesIndex];
+                          },
+                        },
+                        plotOptions: {
+                          pie: {
+                            donut: {
+                              size: "50%",
+                            },
+                          },
+                        },
+                        legend: {
+                          labels: {
+                            colors: "#000т",
+                          },
+                          position: "top",
+                        },
+                        labels: ["ЦНАП", "ТП", "ВРМ", "Дія Центр"],
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [64, 2, 44, 2],
+                        },
+                        Берігівський: {
+                          Всі: [10, 0, 2, 0],
+                          Великобийганська: [1, 0, 0, 0],
+                          Вилоцька: [1, 0, 0, 0],
+                          Виноградівська: [1, 0, 0, 0],
+                          Батівська: [1, 0, 0, 0],
+                          Пийтерфолівська: [1, 0, 0, 0],
+                          Королівська: [1, 0, 0, 0],
+                          Великоберезька: [1, 0, 0, 0],
+                          Камянська: [1, 0, 2, 0],
+                          Берегівська: [1, 0, 0, 0],
+                          Косоньска: [1, 0, 0, 0],
+                        },
+                        Мукачівський: {
+                          Всі: [13, 0, 19, 1],
+                          Івановецька: [1, 0, 0, 0],
+                          Полянська: [1, 0, 5, 0],
+                          Мукачівська: [1, 0, 14, 1],
+                          Верхньокоропецька: [1, 0, 0, 0],
+                          Неліпинська: [1, 0, 0, 0],
+                          Великолучівська: [1, 0, 0, 0],
+                          Горондівська: [1, 0, 0, 0],
+                          Жденіївська: [1, 0, 0, 0],
+                          Кольчинська: [1, 0, 0, 0],
+                          Нижньоворітська: [1, 0, 0, 0],
+                          Свалявська: [1, 0, 0, 0],
+                          Чинадіївська: [1, 0, 0, 0],
+                          Воловецька: [1, 0, 0, 0],
+                        },
+                        Рахівський: {
+                          Всі: [4, 1, 5, 0],
+                          Великобичківська: [1, 1, 5, 0],
+                          Рахівська: [1, 0, 0, 0],
+                          Ясінянська: [1, 0, 0, 0],
+                          Богданська: [1, 0, 0, 0],
+                        },
+                        Тячівський: {
+                          Всі: [10, 0, 4, 0],
+                          "Усть-Чорнянська": [1, 0, 0, 0],
+                          Углянська: [1, 0, 0, 0],
+                          Вільховецька: [1, 0, 0, 0],
+                          Нересницька: [1, 0, 0, 0],
+                          Бедевлянська: [1, 0, 0, 0],
+                          Тячівська: [1, 0, 3, 0],
+                          Солотвинська: [1, 0, 0, 0],
+                          Буштинська: [1, 0, 0, 0],
+                          Дубівська: [1, 0, 1, 0],
+                          Тересвянська: [1, 0, 0, 0],
+                        },
+                        Ужгородський: {
+                          Всі: [6, 0, 14, 1],
+                          Оноківська: [1, 0, 1, 0],
+                          Перечинська: [1, 0, 4, 0],
+                          "Турє-Реметівська": [0, 0, 1, 0],
+                          Чопська: [1, 0, 0, 0],
+                          Середнянська: [1, 0, 0, 0],
+                          Сюртівська: [1, 0, 0, 0],
+                          "Дубриницько-Малоберезнянська": [1, 0, 0, 0],
+                          Костринська: [1, 0, 0, 0],
+                          Ставненьська: [1, 0, 0, 0],
+                          Ужгородська: [1, 0, 0, 1],
+                          Холмківська: [0, 0, 0, 0],
+                          Баранинська: [1, 0, 0, 0],
+                          Великоберезнянська: [1, 0, 0, 0],
+                          Великодобронська: [1, 0, 0, 0],
+                        },
+                        Хустський: {
+                          Всі: [11, 1, 9, 0],
+                          Колочавська: [1, 0, 0, 0],
+                          Драгівська: [1, 0, 0, 0],
+                          Керецьківська: [0, 1, 2, 0],
+                          Зарічанська: [1, 0, 0, 0],
+                          Синевирська: [1, 0, 0, 0],
+                          Горінчівська: [1, 0, 0, 0],
+                          Міжгірська: [1, 0, 0, 0],
+                          Іршавська: [1, 0, 0, 0],
+                          Білківська: [1, 0, 4, 0],
+                          Вишківська: [1, 0, 0, 0],
+                          Пилипецька: [1, 0, 0, 0],
+                          Хустська: [0, 0, 0, 0],
+                          Довжанська: [1, 0, 3, 0],
+                        },
+                      },
+
+                      type: "donut",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [
+                          {
+                            id: nanoid(),
+                            position: "1",
+                            title: "Райони",
+                            table: "cas",
+                            target: "district",
+
+                            subSelect: {
+                              id: nanoid(),
+                              position: "2",
+                              title: "Громади",
+                              table: "cas",
+                              target: "hromada",
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  {
+                    id: "b",
+                    size: "mtl",
+                    location: { x: 4, y: 0 },
+                    title: "ЦНАПи",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Виконано", "План на 01.01.2024"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [46, 64] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [8, 10] }],
+                          Великобийганська: [{ data: [1, 1] }],
+                          Вилоцька: [{ data: [1, 1] }],
+                          Виноградівська: [{ data: [1, 1] }],
+                          Батівська: [{ data: [1, 1] }],
+                          Пийтерфолівська: [{ data: [1, 1] }],
+                          Королівська: [{ data: [1, 1] }],
+                          Великоберезька: [{ data: [0, 1] }],
+                          Камянська: [{ data: [1, 1] }],
+                          Берегівська: [{ data: [1, 1] }],
+                          Косоньска: [{ data: [0, 1] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [9, 13] }],
+                          Івановецька: [{ data: [1, 1] }],
+                          Полянська: [{ data: [1, 1] }],
+                          Мукачівська: [{ data: [1, 1] }],
+                          Верхньокоропецька: [{ data: [0, 1] }],
+                          Неліпинська: [{ data: [0, 1] }],
+                          Великолучівська: [{ data: [1, 1] }],
+                          Горондівська: [{ data: [1, 1] }],
+                          Жденіївська: [{ data: [0, 1] }],
+                          Кольчинська: [{ data: [0, 1] }],
+                          Нижньоворітська: [{ data: [1, 1] }],
+                          Свалявська: [{ data: [1, 1] }],
+                          Чинадіївська: [{ data: [1, 1] }],
+                          Воловецька: [{ data: [1, 1] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [3, 4] }],
+                          Великобичківська: [{ data: [1, 1] }],
+                          Рахівська: [{ data: [1, 1] }],
+                          Ясінянська: [{ data: [1, 1] }],
+                          Богданська: [{ data: [0, 1] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [7, 10] }],
+                          "Усть-Чорнянська": [{ data: [0, 1] }],
+                          Углянська: [{ data: [0, 1] }],
+                          Вільховецька: [{ data: [1, 1] }],
+                          Нересницька: [{ data: [1, 1] }],
+                          Бедевлянська: [{ data: [0, 1] }],
+                          Тячівська: [{ data: [1, 1] }],
+                          Солотвинська: [{ data: [1, 1] }],
+                          Буштинська: [{ data: [1, 1] }],
+                          Дубівська: [{ data: [1, 1] }],
+                          Тересвянська: [{ data: [1, 1] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [9, 14] }],
+                          Оноківська: [{ data: [1, 1] }],
+                          Перечинська: [{ data: [1, 1] }],
+                          "Турє-Реметівська": [{ data: [0, 0] }],
+                          Чопська: [{ data: [1, 1] }],
+                          Середнянська: [{ data: [0, 1] }],
+                          Сюртівська: [{ data: [0, 1] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [1, 1],
+                            },
+                          ],
+                          Костринська: [{ data: [0, 1] }],
+                          Ставненьська: [{ data: [0, 1] }],
+                          Ужгородська: [{ data: [2, 2] }],
+                          Холмківська: [{ data: [0, 0] }],
+                          Баранинська: [{ data: [1, 1] }],
+                          Великоберезнянська: [{ data: [1, 1] }],
+                          Великодобронська: [{ data: [0, 1] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [8, 11] }],
+                          Колочавська: [{ data: [1, 1] }],
+                          Драгівська: [{ data: [1, 1] }],
+                          Керецьківська: [{ data: [0, 0] }],
+                          Зарічанська: [{ data: [0, 0] }],
+                          Синевирська: [{ data: [0, 1] }],
+                          Горінчівська: [{ data: [0, 1] }],
+                          Міжгірська: [{ data: [1, 1] }],
+                          Іршавська: [{ data: [1, 1] }],
+                          Білківська: [{ data: [1, 1] }],
+                          Вишківська: [{ data: [1, 1] }],
+                          Пилипецька: [{ data: [0, 1] }],
+                          Хустська: [{ data: [0, 0] }],
+                          Довжанська: [{ data: [1, 1] }],
+                        },
+                      },
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [
+                          {
+                            id: nanoid(),
+                            position: "1",
+                            title: "Райони",
+                            table: "cas",
+                            target: "district",
+
+                            subSelect: {
+                              id: nanoid(),
+                              position: "2",
+                              title: "Громади",
+                              table: "cas",
+                              target: "hromada",
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "inclusive",
+            title: "Інклюзивність",
+            menuTitle: "Інклюзивність",
+            type: "item",
+            url: "cnap/inclusive",
+            target: true,
+            chartsGroups: [
+              {
+                title:
+                  "Забезпечення інклюзивності у ЦНАПах та іх функціональних підрозділах",
+                charts: [
+                  {
+                    id: "a",
+                    size: "sl",
+                    location: { x: 0, y: 0 },
+                    title: "Рейтинг по районам",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: [
+                            "Мукачівський",
+                            "Тячівський",
+                            "Ужгородський",
+                            "Хустський",
+                            "Берегівський",
+                            "Рахівський",
+                          ],
+                        },
+                      },
+                      series: [
+                        {
+                          data: [39.9, 37.8, 36.5, 33.3, 28.2, 10.6],
+                        },
+                      ],
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [],
+                      },
+                    },
+                  },
+                  {
+                    id: "b",
+                    size: "sl",
+                    location: { x: 6, y: 0 },
+                    title: "Топ 5 громад",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: [
+                            "Горондівська",
+                            "Ужгородська",
+                            "Міжгірська",
+                            "Великобийганська",
+                            "Вилоцька",
+                          ],
+                        },
+                      },
+                      series: [
+                        {
+                          data: [83.3, 83.3, 83.3, 66.6, 66.6],
+                        },
+                      ],
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [],
+                      },
+                    },
+                  },
+                  {
+                    id: "c",
+                    size: "mtl",
+                    location: { x: 0, y: 4 },
+                    title: "Перегляд по окремим районам та громадам",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+                        yaxis: {
+                          min: 0,
+                          max: 100,
+                        },
+                        xaxis: {
+                          categories: ["Виконано", "Заплановано на 01.01.2024"],
+                          labels: {
+                            hideOverlappingLabels: true,
+                            maxHeight: 100,
+                            trim: true,
+                          },
+                        },
+                      },
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [
+                          {
+                            id: nanoid(),
+                            position: "1",
+                            title: "Райони",
+                            target: "district",
+
+                            subSelect: {
+                              id: nanoid(),
+                              position: "2",
+                              title: "Громада",
+                              target: "hromada",
+
+                              subSelect: {
+                                id: nanoid(),
+                                position: "3",
+                                title: "Тип",
+                                target: "type",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  {
+                    id: "d",
+                    size: "mtl",
+                    location: { x: 0, y: 8 },
+                    title:
+                      "Наявні рішення для обслуговування осіб з порушенням зору ",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+                        yaxis: {
+                          min: 0,
+                          max: 100,
+                        },
+                        xaxis: {
+                          categories: ["Виконано", "Заплановано на 01.01.2024"],
+                          labels: {
+                            hideOverlappingLabels: true,
+                            maxHeight: 100,
+                            trim: true,
+                          },
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Берігівський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великобийганська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Вилоцька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Виноградівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Батівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Пийтерфолівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Королівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великоберезька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Камянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Берегівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Косоньска: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Мукачівський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Івановецька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Полянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Мукачівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Верхньокоропецька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Неліпинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великолучівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Горондівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Жденіївська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Кольчинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Нижньоворітська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Свалявська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Чинадіївська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Воловецька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Рахівський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великобичківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Рахівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Ясінянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Богданська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Тячівський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          "Усть-Чорнянська": {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Углянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Вільховецька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Нересницька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Бедевлянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Тячівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Солотвинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Буштинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Дубівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Тересвянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Ужгородський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Оноківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Перечинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          "Турє-Реметівська": {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Чопська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Середнянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Сюртівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          "Дубриницько-Малоберезнянська": {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Костринська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Ставненьська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Ужгородська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Холмківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Баранинська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великоберезнянська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Великодобронська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                        Хустський: {
+                          Всі: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Колочавська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Драгівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Керецьківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Зарічанська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Синевирська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Горінчівська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Міжгірська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Іршавська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Білківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Вишківська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Пилипецька: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Хустська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                          Довжанська: {
+                            Всі: [{ data: [50, 100] }],
+                          },
+                        },
+                      },
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [
+                          {
+                            id: nanoid(),
+                            position: "1",
+                            title: "Райони",
+                            target: "district",
+
+                            subSelect: {
+                              id: nanoid(),
+                              position: "2",
+                              title: "Громада",
+                              target: "hromada",
+
+                              subSelect: {
+                                id: nanoid(),
+                                position: "3",
+                                title: "Тип",
+                                target: "type",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  {
+                    id: "e",
+                    size: "mtl",
+                    location: { x: 8, y: 4 },
+                    title:
+                      "Наявні рішення для обслуговування осіб з порушенням слуху ",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+                        yaxis: {
+                          min: 0,
+                          max: 100,
+                        },
+                        xaxis: {
+                          categories: ["Виконано", "Заплановано на 01.01.2024"],
+                          labels: {
+                            hideOverlappingLabels: true,
+                            maxHeight: 100,
+                            trim: true,
+                          },
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Берігівський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великобийганська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Вилоцька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Виноградівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Батівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Пийтерфолівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Королівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великоберезька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Камянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Берегівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Косоньска: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Мукачівський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Івановецька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Полянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Мукачівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Верхньокоропецька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Неліпинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великолучівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Горондівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Жденіївська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Кольчинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Нижньоворітська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Свалявська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Чинадіївська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Воловецька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Рахівський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великобичківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Рахівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Ясінянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Богданська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Тячівський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          "Усть-Чорнянська": {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Углянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Вільховецька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Нересницька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Бедевлянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Тячівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Солотвинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Буштинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Дубівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Тересвянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Ужгородський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Оноківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Перечинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          "Турє-Реметівська": {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Чопська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Середнянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Сюртівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          "Дубриницько-Малоберезнянська": {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Костринська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Ставненьська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Ужгородська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Холмківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Баранинська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великоберезнянська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Великодобронська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                        Хустський: {
+                          Всі: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Колочавська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Драгівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Керецьківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Зарічанська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Синевирська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Горінчівська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Міжгірська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Іршавська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Білківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Вишківська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Пилипецька: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Хустська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                          Довжанська: {
+                            Всі: [{ data: [25, 100] }],
+                          },
+                        },
+                      },
+                      type: "bar",
+                      aditionalSetings: {
+                        singleInfo: null,
+                        filterSelects: [
+                          {
+                            id: nanoid(),
+                            position: "1",
+                            title: "Райони",
+                            target: "district",
+
+                            subSelect: {
+                              id: nanoid(),
+                              position: "2",
+                              title: "Громада",
+                              target: "hromada",
+
+                              subSelect: {
+                                id: nanoid(),
+                                position: "3",
+                                title: "Тип",
+                                target: "type",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            id: "barrier-free",
+            title: "Безбар'єрність",
+            menuTitle: "Безбар'єрність",
+            type: "item",
+            url: "cnap/barrier-free",
+            target: true,
+
+            chartsGroups: [
+              {
+                title: "Безбар'єрність",
+                filterSelects: [
+                  {
+                    id: nanoid(),
+                    position: "1",
+                    title: "Райони",
+                    target: "district",
+
+                    subSelect: {
+                      id: nanoid(),
+                      position: "2",
+                      title: "Громади",
+                      target: "hromada",
+                    },
+                  },
+                ],
+                charts: [
+                  {
+                    id: "b",
+                    size: "s",
+                    location: { x: 1, y: 0 },
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        text: "Передбачене фінансування",
+                        addText: "тис.грн",
+                      },
+                      data: {
+                        Всі: {
+                          Всі: 5584,
+                        },
+                        Берігівський: {
+                          Всі: 3462,
+                          Великобийганська: 1622,
+                          Вилоцька: 0,
+                          Виноградівська: 500,
+                          Батівська: 0,
+                          Пийтерфолівська: 0,
+                          Королівська: 0,
+                          Великоберезька: 0,
+                          Камянська: 0,
+                          Берегівська: 0,
+                          Косоньска: 0,
+                        },
+                        Мукачівський: {
+                          Всі: 0,
+                          Івановецька: 0,
+                          Полянська: 0,
+                          Мукачівська: 0,
+                          Верхньокоропецька: 0,
+                          Неліпинська: 0,
+                          Великолучівська: 0,
+                          Горондівська: 0,
+                          Жденіївська: 0,
+                          Кольчинська: 0,
+                          Нижньоворітська: 0,
+                          Свалявська: 0,
+                          Чинадіївська: 0,
+                          Воловецька: 0,
+                        },
+                        Рахівський: {
+                          Всі: 0,
+                          Великобичківська: 0,
+                          Рахівська: 0,
+                          Ясінянська: 0,
+                          Богданська: 0,
+                        },
+                        Тячівський: {
+                          Всі: 0,
+                          "Усть-Чорнянська": 0,
+                          Углянська: 0,
+                          Вільховецька: 0,
+                          Нересницька: 0,
+                          Бедевлянська: 0,
+                          Тячівська: 0,
+                          Солотвинська: 0,
+                          Буштинська: 0,
+                          Дубівська: 0,
+                          Тересвянська: 0,
+                        },
+                        Ужгородський: {
+                          Всі: 1070,
+                          Оноківська: 50,
+                          Перечинська: 0,
+                          "Турє-Реметівська": 0,
+                          Чопська: 0,
+                          Середнянська: 0,
+                          Сюртівська: 0,
+                          "Дубриницько-Малоберезнянська": 0,
+                          Костринська: 0,
+                          Ставненьська: 0,
+                          Ужгородська: 1020,
+                          Холмківська: 0,
+                          Баранинська: 0,
+                          Великоберезнянська: 0,
+                          Великодобронська: 0,
+                        },
+                        Хустський: {
+                          Всі: 0,
+                          Колочавська: 0,
+                          Драгівська: 0,
+                          Керецьківська: 0,
+                          Зарічанська: 0,
+                          Синевирська: 0,
+                          Горінчівська: 0,
+                          Міжгірська: 0,
+                          Іршавська: 0,
+                          Білківська: 0,
+                          Вишківська: 0,
+                          Пилипецька: 0,
+                          Хустська: 0,
+                          Довжанська: 0,
+                        },
+                      },
+                      type: "single",
+                    },
+                  },
+                  {
+                    id: "a",
+                    size: "sl",
+                    location: { x: 6, y: 0 },
+                    title: "Програма доступності",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: [
+                            "Розробляється",
+                            "Розроблена",
+                            "Затверджена",
+                          ],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [25, 16, 14] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [4, 5, 4] }],
+                          Великобийганська: [{ data: [0, 1, 1] }],
+                          Вилоцька: [{ data: [0, 0, 0] }],
+                          Виноградівська: [{ data: [1, 1, 1] }],
+                          Батівська: [{ data: [0, 0, 0] }],
+                          Пийтерфолівська: [{ data: [1, 1, 1] }],
+                          Королівська: [{ data: [0, 0, 0] }],
+                          Великоберезька: [{ data: [1, 1, 1] }],
+                          Камянська: [{ data: [0, 0, 0] }],
+                          Берегівська: [{ data: [1, 1, 0] }],
+                          Косоньска: [{ data: [0, 0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [1, 4, 2] }],
+                          Івановецька: [{ data: [0, 0, 0] }],
+                          Полянська: [{ data: [0, 1, 0] }],
+                          Мукачівська: [{ data: [0, 0, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0, 0] }],
+                          Неліпинська: [{ data: [0, 1, 0] }],
+                          Великолучівська: [{ data: [0, 0, 0] }],
+                          Горондівська: [{ data: [0, 0, 0] }],
+                          Жденіївська: [{ data: [0, 1, 1] }],
+                          Кольчинська: [{ data: [0, 0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0, 0] }],
+                          Свалявська: [{ data: [1, 1, 1] }],
+                          Чинадіївська: [{ data: [0, 0, 0] }],
+                          Воловецька: [{ data: [0, 0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [2, 0, 1] }],
+                          Великобичківська: [{ data: [1, 0, 0] }],
+                          Рахівська: [{ data: [0, 0, 0] }],
+                          Ясінянська: [{ data: [1, 0, 0] }],
+                          Богданська: [{ data: [0, 0, 1] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [5, 3, 2] }],
+                          "Усть-Чорнянська": [{ data: [1, 0, 0] }],
+                          Углянська: [{ data: [1, 0, 0] }],
+                          Вільховецька: [{ data: [1, 0, 0] }],
+                          Нересницька: [{ data: [0, 1, 0] }],
+                          Бедевлянська: [{ data: [1, 0, 0] }],
+                          Тячівська: [{ data: [0, 0, 1] }],
+                          Солотвинська: [{ data: [0, 1, 0] }],
+                          Буштинська: [{ data: [0, 1, 0] }],
+                          Дубівська: [{ data: [0, 0, 1] }],
+                          Тересвянська: [{ data: [1, 0, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [3, 4, 2] }],
+                          Оноківська: [{ data: [0, 1, 0] }],
+                          Перечинська: [{ data: [0, 1, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 1, 0] }],
+                          Чопська: [{ data: [0, 0, 1] }],
+                          Середнянська: [{ data: [0, 0, 0] }],
+                          Сюртівська: [{ data: [0, 0, 0] }],
+                          "Дубриницько-Малоберезнянська": [{ data: [0, 0, 0] }],
+                          Костринська: [{ data: [1, 0, 0] }],
+                          Ставненьська: [{ data: [0, 1, 0] }],
+                          Ужгородська: [{ data: [0, 0, 1] }],
+                          Холмківська: [{ data: [0, 0, 0] }],
+                          Баранинська: [{ data: [0, 0, 0] }],
+                          Великоберезнянська: [{ data: [1, 0, 0] }],
+                          Великодобронська: [{ data: [1, 0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [10, 0, 3] }],
+                          Колочавська: [{ data: [1, 0, 0] }],
+                          Драгівська: [{ data: [1, 0, 0] }],
+                          Керецьківська: [{ data: [0, 0, 1] }],
+                          Зарічанська: [{ data: [0, 0, 1] }],
+                          Синевирська: [{ data: [1, 0, 0] }],
+                          Горінчівська: [{ data: [1, 0, 0] }],
+                          Міжгірська: [{ data: [1, 0, 0] }],
+                          Іршавська: [{ data: [0, 0, 1] }],
+                          Білківська: [{ data: [1, 0, 0] }],
+                          Вишківська: [{ data: [1, 0, 0] }],
+                          Пилипецька: [{ data: [1, 0, 0] }],
+                          Хустська: [{ data: [1, 0, 0] }],
+                          Довжанська: [{ data: [1, 0, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "c",
+                    size: "s",
+                    location: { x: 0, y: 2 },
+                    title: "Вуличні перехрестя",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [10, 0] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобийганська: [{ data: [0, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [0, 0] }],
+                          Батівська: [{ data: [0, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [0, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [0, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [0, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [1, 0] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [1, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [0, 0] }],
+                          Тересвянська: [{ data: [0, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [1, 0] }],
+                          Оноківська: [{ data: [0, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 0] }],
+                          Чопська: [{ data: [1, 0] }],
+                          Середнянська: [{ data: [0, 0] }],
+                          Сюртівська: [{ data: [0, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [0, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [0, 0] }],
+                          Ставненьська: [{ data: [0, 0] }],
+                          Ужгородська: [{ data: [0, 0] }],
+                          Холмківська: [{ data: [0, 0] }],
+                          Баранинська: [{ data: [0, 0] }],
+                          Великоберезнянська: [{ data: [0, 0] }],
+                          Великодобронська: [{ data: [0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [8, 0] }],
+                          Колочавська: [{ data: [0, 0] }],
+                          Драгівська: [{ data: [1, 0] }],
+                          Керецьківська: [{ data: [1, 0] }],
+                          Зарічанська: [{ data: [1, 0] }],
+                          Синевирська: [{ data: [1, 0] }],
+                          Горінчівська: [{ data: [1, 0] }],
+                          Міжгірська: [{ data: [0, 0] }],
+                          Іршавська: [{ data: [0, 0] }],
+                          Білківська: [{ data: [1, 0] }],
+                          Вишківська: [{ data: [0, 0] }],
+                          Пилипецька: [{ data: [1, 0] }],
+                          Хустська: [{ data: [1, 0] }],
+                          Довжанська: [{ data: [0, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "d",
+                    size: "s",
+                    location: { x: 4, y: 2 },
+                    title: "Адмінбудівлі владних структур",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [37, 0] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [19, 0] }],
+                          Великобийганська: [{ data: [5, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [1, 0] }],
+                          Батівська: [{ data: [2, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [7, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [3, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [1, 0] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [1, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [6, 0] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [3, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [0, 0] }],
+                          Тересвянська: [{ data: [3, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [0, 0] }],
+                          Оноківська: [{ data: [0, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 0] }],
+                          Чопська: [{ data: [0, 0] }],
+                          Середнянська: [{ data: [0, 0] }],
+                          Сюртівська: [{ data: [0, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [0, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [0, 0] }],
+                          Ставненьська: [{ data: [0, 0] }],
+                          Ужгородська: [{ data: [0, 0] }],
+                          Холмківська: [{ data: [0, 0] }],
+                          Баранинська: [{ data: [0, 0] }],
+                          Великоберезнянська: [{ data: [0, 0] }],
+                          Великодобронська: [{ data: [0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [99, 0] }],
+                          Колочавська: [{ data: [3, 0] }],
+                          Драгівська: [{ data: [3, 0] }],
+                          Керецьківська: [{ data: [5, 0] }],
+                          Зарічанська: [{ data: [3, 0] }],
+                          Синевирська: [{ data: [2, 0] }],
+                          Горінчівська: [{ data: [7, 0] }],
+                          Міжгірська: [{ data: [16, 0] }],
+                          Іршавська: [{ data: [18, 0] }],
+                          Білківська: [{ data: [5, 0] }],
+                          Вишківська: [{ data: [3, 0] }],
+                          Пилипецька: [{ data: [1, 0] }],
+                          Хустська: [{ data: [28, 0] }],
+                          Довжанська: [{ data: [5, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "e",
+                    size: "s",
+                    location: { x: 8, y: 2 },
+                    title: "Об'єкти соціального захисту",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [17, 0] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобийганська: [{ data: [0, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [0, 0] }],
+                          Батівська: [{ data: [0, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [0, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [0, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [0, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [2, 0] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [1, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [0, 0] }],
+                          Тересвянська: [{ data: [1, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [0, 0] }],
+                          Оноківська: [{ data: [0, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 0] }],
+                          Чопська: [{ data: [0, 0] }],
+                          Середнянська: [{ data: [0, 0] }],
+                          Сюртівська: [{ data: [0, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [0, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [0, 0] }],
+                          Ставненьська: [{ data: [0, 0] }],
+                          Ужгородська: [{ data: [0, 0] }],
+                          Холмківська: [{ data: [0, 0] }],
+                          Баранинська: [{ data: [0, 0] }],
+                          Великоберезнянська: [{ data: [0, 0] }],
+                          Великодобронська: [{ data: [0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [15, 0] }],
+                          Колочавська: [{ data: [1, 0] }],
+                          Драгівська: [{ data: [1, 0] }],
+                          Керецьківська: [{ data: [1, 0] }],
+                          Зарічанська: [{ data: [1, 0] }],
+                          Синевирська: [{ data: [0, 0] }],
+                          Горінчівська: [{ data: [1, 0] }],
+                          Міжгірська: [{ data: [2, 0] }],
+                          Іршавська: [{ data: [2, 0] }],
+                          Білківська: [{ data: [1, 0] }],
+                          Вишківська: [{ data: [1, 0] }],
+                          Пилипецька: [{ data: [1, 0] }],
+                          Хустська: [{ data: [2, 0] }],
+                          Довжанська: [{ data: [1, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "f",
+                    size: "s",
+                    location: { x: 0, y: 4 },
+                    title: "План заходів",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: [
+                            "Розробляється",
+                            "Розроблено",
+                            "Затверджено",
+                          ],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [17, 6, 6] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [9, 3, 3] }],
+                          Великобийганська: [{ data: [0, 1, 1] }],
+                          Вилоцька: [{ data: [1, 0, 0] }],
+                          Виноградівська: [{ data: [1, 0, 0] }],
+                          Батівська: [{ data: [1, 0, 0] }],
+                          Пийтерфолівська: [{ data: [1, 1, 1] }],
+                          Королівська: [{ data: [1, 0, 0] }],
+                          Великоберезька: [{ data: [1, 1, 1] }],
+                          Камянська: [{ data: [0, 0, 0] }],
+                          Берегівська: [{ data: [1, 0, 0] }],
+                          Косоньска: [{ data: [1, 0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [10, 1, 1] }],
+                          Івановецька: [{ data: [1, 0, 0] }],
+                          Полянська: [{ data: [1, 0, 0] }],
+                          Мукачівська: [{ data: [1, 0, 0] }],
+                          Верхньокоропецька: [{ data: [1, 0, 0] }],
+                          Неліпинська: [{ data: [0, 1, 0] }],
+                          Великолучівська: [{ data: [0, 0, 0] }],
+                          Горондівська: [{ data: [1, 0, 0] }],
+                          Жденіївська: [{ data: [1, 0, 0] }],
+                          Кольчинська: [{ data: [1, 0, 0] }],
+                          Нижньоворітська: [{ data: [1, 0, 0] }],
+                          Свалявська: [{ data: [1, 0, 1] }],
+                          Чинадіївська: [{ data: [0, 0, 0] }],
+                          Воловецька: [{ data: [1, 0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [4, 0, 0] }],
+                          Великобичківська: [{ data: [1, 0, 0] }],
+                          Рахівська: [{ data: [1, 0, 0] }],
+                          Ясінянська: [{ data: [1, 0, 0] }],
+                          Богданська: [{ data: [1, 0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [0, 0, 8] }],
+                          "Усть-Чорнянська": [{ data: [0, 0, 1] }],
+                          Углянська: [{ data: [0, 0, 0] }],
+                          Вільховецька: [{ data: [0, 0, 1] }],
+                          Нересницька: [{ data: [0, 0, 1] }],
+                          Бедевлянська: [{ data: [0, 0, 1] }],
+                          Тячівська: [{ data: [0, 0, 0] }],
+                          Солотвинська: [{ data: [0, 0, 1] }],
+                          Буштинська: [{ data: [0, 0, 1] }],
+                          Дубівська: [{ data: [0, 0, 1] }],
+                          Тересвянська: [{ data: [0, 0, 1] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [10, 0, 3] }],
+                          Оноківська: [{ data: [0, 0, 1] }],
+                          Перечинська: [{ data: [1, 0, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 0, 1] }],
+                          Чопська: [{ data: [0, 0, 0] }],
+                          Середнянська: [{ data: [1, 0, 0] }],
+                          Сюртівська: [{ data: [1, 0, 0] }],
+                          "Дубриницько-Малоберезнянська": [{ data: [1, 0, 0] }],
+                          Костринська: [{ data: [1, 0, 0] }],
+                          Ставненьська: [{ data: [0, 0, 1] }],
+                          Ужгородська: [{ data: [1, 0, 0] }],
+                          Холмківська: [{ data: [1, 0, 0] }],
+                          Баранинська: [{ data: [1, 0, 0] }],
+                          Великоберезнянська: [{ data: [1, 0, 0] }],
+                          Великодобронська: [{ data: [1, 0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [1, 1, 11] }],
+                          Колочавська: [{ data: [0, 0, 1] }],
+                          Драгівська: [{ data: [0, 0, 1] }],
+                          Керецьківська: [{ data: [0, 0, 1] }],
+                          Зарічанська: [{ data: [0, 0, 1] }],
+                          Синевирська: [{ data: [0, 0, 1] }],
+                          Горінчівська: [{ data: [0, 1, 0] }],
+                          Міжгірська: [{ data: [0, 0, 1] }],
+                          Іршавська: [{ data: [0, 0, 1] }],
+                          Білківська: [{ data: [0, 0, 1] }],
+                          Вишківська: [{ data: [0, 0, 1] }],
+                          Пилипецька: [{ data: [0, 0, 1] }],
+                          Хустська: [{ data: [1, 0, 0] }],
+                          Довжанська: [{ data: [0, 0, 1] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "j",
+                    size: "s",
+                    location: { x: 4, y: 4 },
+                    title: "Об'єкти охорони здоров'я",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [619, 4] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [6, 0] }],
+                          Великобийганська: [{ data: [5, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [1, 0] }],
+                          Батівська: [{ data: [0, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [0, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [0, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [2, 0] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [2, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [10, 3] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [4, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [3, 2] }],
+                          Тересвянська: [{ data: [3, 1] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [78, 1] }],
+                          Оноківська: [{ data: [4, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [9, 0] }],
+                          Чопська: [{ data: [1, 0] }],
+                          Середнянська: [{ data: [8, 0] }],
+                          Сюртівська: [{ data: [5, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [3, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [3, 0] }],
+                          Ставненьська: [{ data: [3, 0] }],
+                          Ужгородська: [{ data: [17, 0] }],
+                          Холмківська: [{ data: [7, 0] }],
+                          Баранинська: [{ data: [12, 0] }],
+                          Великоберезнянська: [{ data: [2, 1] }],
+                          Великодобронська: [{ data: [4, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [523, 0] }],
+                          Колочавська: [{ data: [12, 0] }],
+                          Драгівська: [{ data: [11, 0] }],
+                          Керецьківська: [{ data: [9, 0] }],
+                          Зарічанська: [{ data: [9, 0] }],
+                          Синевирська: [{ data: [5, 0] }],
+                          Горінчівська: [{ data: [13, 0] }],
+                          Міжгірська: [{ data: [27, 0] }],
+                          Іршавська: [{ data: [47, 0] }],
+                          Білківська: [{ data: [5, 0] }],
+                          Вишківська: [{ data: [11, 0] }],
+                          Пилипецька: [{ data: [9, 0] }],
+                          Хустська: [{ data: [354, 0] }],
+                          Довжанська: [{ data: [11, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "h",
+                    size: "s",
+                    location: { x: 8, y: 4 },
+                    title: "Заклади освіти",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [380, 31] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [85, 0] }],
+                          Великобийганська: [{ data: [10, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [38, 0] }],
+                          Батівська: [{ data: [9, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [12, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [16, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [78, 21] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [78, 21] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [29, 9] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [9, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [15, 9] }],
+                          Тересвянська: [{ data: [5, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [111, 1] }],
+                          Оноківська: [{ data: [5, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [22, 0] }],
+                          Чопська: [{ data: [1, 0] }],
+                          Середнянська: [{ data: [27, 0] }],
+                          Сюртівська: [{ data: [13, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [8, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [4, 0] }],
+                          Ставненьська: [{ data: [15, 1] }],
+                          Ужгородська: [{ data: [0, 0] }],
+                          Холмківська: [{ data: [6, 0] }],
+                          Баранинська: [{ data: [2, 0] }],
+                          Великоберезнянська: [{ data: [2, 0] }],
+                          Великодобронська: [{ data: [6, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [77, 0] }],
+                          Колочавська: [{ data: [3, 0] }],
+                          Драгівська: [{ data: [6, 0] }],
+                          Керецьківська: [{ data: [1, 0] }],
+                          Зарічанська: [{ data: [4, 0] }],
+                          Синевирська: [{ data: [2, 0] }],
+                          Горінчівська: [{ data: [5, 0] }],
+                          Міжгірська: [{ data: [9, 0] }],
+                          Іршавська: [{ data: [9, 0] }],
+                          Білківська: [{ data: [5, 0] }],
+                          Вишківська: [{ data: [4, 0] }],
+                          Пилипецька: [{ data: [4, 0] }],
+                          Хустська: [{ data: [20, 0] }],
+                          Довжанська: [{ data: [5, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                  {
+                    id: "s",
+                    size: "s",
+                    location: { x: 4, y: 6 },
+                    title: "Об'єкти укриття",
+                    public: true,
+                    chartConfig: {
+                      options: {
+                        chart: {
+                          id: "bar-chart",
+                        },
+                        plotOptions: {
+                          bar: {
+                            horizontal: true,
+                          },
+                        },
+
+                        xaxis: {
+                          categories: ["Обстежено", "Недоліки усунено"],
+                        },
+                      },
+                      data: {
+                        Всі: {
+                          Всі: [{ data: [10, 4] }],
+                        },
+                        Берігівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Великобийганська: [{ data: [0, 0] }],
+                          Вилоцька: [{ data: [0, 0] }],
+                          Виноградівська: [{ data: [0, 0] }],
+                          Батівська: [{ data: [0, 0] }],
+                          Пийтерфолівська: [{ data: [0, 0] }],
+                          Королівська: [{ data: [0, 0] }],
+                          Великоберезька: [{ data: [0, 0] }],
+                          Камянська: [{ data: [0, 0] }],
+                          Берегівська: [{ data: [0, 0] }],
+                          Косоньска: [{ data: [0, 0] }],
+                        },
+                        Мукачівський: {
+                          Всі: [{ data: [0, 0] }],
+                          Івановецька: [{ data: [0, 0] }],
+                          Полянська: [{ data: [0, 0] }],
+                          Мукачівська: [{ data: [0, 0] }],
+                          Верхньокоропецька: [{ data: [0, 0] }],
+                          Неліпинська: [{ data: [0, 0] }],
+                          Великолучівська: [{ data: [0, 0] }],
+                          Горондівська: [{ data: [0, 0] }],
+                          Жденіївська: [{ data: [0, 0] }],
+                          Кольчинська: [{ data: [0, 0] }],
+                          Нижньоворітська: [{ data: [0, 0] }],
+                          Свалявська: [{ data: [0, 0] }],
+                          Чинадіївська: [{ data: [0, 0] }],
+                          Воловецька: [{ data: [0, 0] }],
+                        },
+                        Рахівський: {
+                          Всі: [{ data: [3, 4] }],
+                          Великобичківська: [{ data: [0, 0] }],
+                          Рахівська: [{ data: [0, 0] }],
+                          Ясінянська: [{ data: [0, 0] }],
+                          Богданська: [{ data: [0, 0] }],
+                        },
+                        Тячівський: {
+                          Всі: [{ data: [7, 0] }],
+                          "Усть-Чорнянська": [{ data: [0, 0] }],
+                          Углянська: [{ data: [0, 0] }],
+                          Вільховецька: [{ data: [0, 0] }],
+                          Нересницька: [{ data: [0, 0] }],
+                          Бедевлянська: [{ data: [0, 0] }],
+                          Тячівська: [{ data: [0, 0] }],
+                          Солотвинська: [{ data: [0, 0] }],
+                          Буштинська: [{ data: [0, 0] }],
+                          Дубівська: [{ data: [0, 0] }],
+                          Тересвянська: [{ data: [7, 0] }],
+                        },
+                        Ужгородський: {
+                          Всі: [{ data: [0, 0] }],
+                          Оноківська: [{ data: [0, 0] }],
+                          Перечинська: [{ data: [0, 0] }],
+                          "Турє-Реметівська": [{ data: [0, 0] }],
+                          Чопська: [{ data: [0, 0] }],
+                          Середнянська: [{ data: [0, 0] }],
+                          Сюртівська: [{ data: [0, 0] }],
+                          "Дубриницько-Малоберезнянська": [
+                            {
+                              data: [0, 0],
+                            },
+                          ],
+                          Костринська: [{ data: [0, 0] }],
+                          Ставненьська: [{ data: [0, 0] }],
+                          Ужгородська: [{ data: [0, 0] }],
+                          Холмківська: [{ data: [0, 0] }],
+                          Баранинська: [{ data: [0, 0] }],
+                          Великоберезнянська: [{ data: [0, 0] }],
+                          Великодобронська: [{ data: [0, 0] }],
+                        },
+                        Хустський: {
+                          Всі: [{ data: [0, 0] }],
+                          Колочавська: [{ data: [0, 0] }],
+                          Драгівська: [{ data: [0, 0] }],
+                          Керецьківська: [{ data: [0, 0] }],
+                          Зарічанська: [{ data: [0, 0] }],
+                          Синевирська: [{ data: [0, 0] }],
+                          Горінчівська: [{ data: [0, 0] }],
+                          Міжгірська: [{ data: [0, 0] }],
+                          Іршавська: [{ data: [0, 0] }],
+                          Білківська: [{ data: [0, 0] }],
+                          Вишківська: [{ data: [0, 0] }],
+                          Пилипецька: [{ data: [0, 0] }],
+                          Хустська: [{ data: [0, 0] }],
+                          Довжанська: [{ data: [0, 0] }],
+                        },
+                      },
+                      type: "bar",
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "education",
+    title: "Освіта",
+    menuTitle: "Освіта",
+    type: "collapse",
+    icon: <School />,
+    color: "#AAE3E3",
+
+    children: [
+      {
+        id: "e-document",
+        title: "Є-документи",
+        menuTitle: "Є-документи",
+        type: "item",
+        url: "/cabinet/analytics/education/e-document",
+        target: true,
+        chartsGroups: [
+          {
+            title: "Кількість створених електронних документів",
+            charts: [
+              {
+                id: "a",
+                size: "mtl",
+                location: { x: 0, y: 0 },
+                title: "е-Щоденник",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+                    xaxis: {
+                      categories: ["Фактична кількість", "Планова кількість"],
+                    },
+                  },
+                  data: {
+                    Всі: {
+                      Всі: [{ data: [199, 653] }],
+                    },
+                    Берігівський: {
+                      Всі: [{ data: [20, 117] }],
+                      Великобийганська: [{ data: [0, 6] }],
+                      Вилоцька: [{ data: [2, 9] }],
+                      Виноградівська: [{ data: [2, 23] }],
+                      Батівська: [{ data: [1, 11] }],
+                      Пийтерфолівська: [{ data: [1, 0] }],
+                      Королівська: [{ data: [1, 9] }],
+                      Великоберезька: [{ data: [0, 5] }],
+                      Камянська: [{ data: [8, 8] }],
+                      Берегівська: [{ data: [5, 25] }],
+                      Косоньска: [{ data: [0, 0] }],
+                    },
+                    Мукачівський: {
+                      Всі: [{ data: [96, 139] }],
+                      Івановецька: [{ data: [9, 9] }],
+                      Полянська: [{ data: [9, 9] }],
+                      Мукачівська: [{ data: [35, 37] }],
+                      Верхньокоропецька: [{ data: [1, 10] }],
+                      Неліпинська: [{ data: [0, 3] }],
+                      Великолучівська: [{ data: [10, 11] }],
+                      Горондівська: [{ data: [4, 4] }],
+                      Жденіївська: [{ data: [7, 8] }],
+                      Кольчинська: [{ data: [5, 5] }],
+                      Нижньоворітська: [{ data: [2, 11] }],
+                      Свалявська: [{ data: [2, 16] }],
+                      Чинадіївська: [{ data: [12, 12] }],
+                      Воловецька: [{ data: [0, 4] }],
+                    },
+                    Рахівський: {
+                      Всі: [{ data: [22, 35] }],
+                      Великобичківська: [{ data: [9, 14] }],
+                      Рахівська: [{ data: [9, 9] }],
+                      Ясінянська: [{ data: [0, 8] }],
+                      Богданська: [{ data: [4, 4] }],
+                    },
+                    Тячівський: {
+                      Всі: [{ data: [12, 82] }],
+                      "Усть-Чорнянська": [{ data: [0, 7] }],
+                      Углянська: [{ data: [0, 7] }],
+                      Вільховецька: [{ data: [0, 6] }],
+                      Нересницька: [{ data: [2, 13] }],
+                      Бедевлянська: [{ data: [0, 3] }],
+                      Тячівська: [{ data: [0, 9] }],
+                      Солотвинська: [{ data: [2, 15] }],
+                      Буштинська: [{ data: [1, 10] }],
+                      Дубівська: [{ data: [7, 7] }],
+                      Тересвянська: [{ data: [0, 5] }],
+                    },
+                    Ужгородський: {
+                      Всі: [{ data: [41, 139] }],
+                      Оноківська: [{ data: [1, 4] }],
+                      Перечинська: [{ data: [1, 7] }],
+                      "Турє-Реметівська": [{ data: [0, 12] }],
+                      Чопська: [{ data: [3, 8] }],
+                      Середнянська: [{ data: [1, 14] }],
+                      Сюртівська: [{ data: [2, 7] }],
+                      "Дубриницько-Малоберезнянська": [
+                        {
+                          data: [2, 7],
+                        },
+                      ],
+                      Костринська: [{ data: [1, 7] }],
+                      Ставненьська: [{ data: [0, 10] }],
+                      Ужгородська: [{ data: [14, 32] }],
+                      Холмківська: [{ data: [6, 6] }],
+                      Баранинська: [{ data: [0, 0] }],
+                      Великоберезнянська: [{ data: [1, 8] }],
+                      Великодобронська: [{ data: [0, 6] }],
+                    },
+                    Хустський: {
+                      Всі: [{ data: [8, 141] }],
+                      Колочавська: [{ data: [0, 6] }],
+                      Драгівська: [{ data: [0, 7] }],
+                      Керецьківська: [{ data: [0, 0] }],
+                      Зарічанська: [{ data: [0, 4] }],
+                      Синевирська: [{ data: [0, 2] }],
+                      Горінчівська: [{ data: [0, 11] }],
+                      Міжгірська: [{ data: [1, 18] }],
+                      Іршавська: [{ data: [1, 25] }],
+                      Білківська: [{ data: [4, 14] }],
+                      Вишківська: [{ data: [0, 7] }],
+                      Пилипецька: [{ data: [0, 9] }],
+                      Хустська: [{ data: [3, 32] }],
+                      Довжанська: [{ data: [0, 6] }],
+                    },
+                  },
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [
+                      {
+                        id: nanoid(),
+                        position: "1",
+                        title: "Райони",
+                        target: "district",
+
+                        subSelect: {
+                          id: nanoid(),
+                          position: "2",
+                          title: "Громади",
+                          target: "hromada",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+              {
+                id: "b",
+                size: "mtl",
+                location: { x: 6, y: 0 },
+                title: "е-Журнал",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: ["Фактична кількість", "Планова кількість"],
+                    },
+                  },
+                  data: {
+                    Всі: {
+                      Всі: [{ data: [270, 653] }],
+                    },
+                    Берігівський: {
+                      Всі: [{ data: [26, 117] }],
+                      Великобийганська: [{ data: [0, 6] }],
+                      Вилоцька: [{ data: [2, 9] }],
+                      Виноградівська: [{ data: [3, 23] }],
+                      Батівська: [{ data: [1, 11] }],
+                      Пийтерфолівська: [{ data: [3, 14] }],
+                      Королівська: [{ data: [4, 9] }],
+                      Великоберезька: [{ data: [0, 5] }],
+                      Камянська: [{ data: [8, 8] }],
+                      Берегівська: [{ data: [5, 25] }],
+                      Косоньска: [{ data: [0, 0] }],
+                    },
+                    Мукачівський: {
+                      Всі: [{ data: [111, 139] }],
+                      Івановецька: [{ data: [9, 9] }],
+                      Полянська: [{ data: [9, 9] }],
+                      Мукачівська: [{ data: [35, 37] }],
+                      Верхньокоропецька: [{ data: [10, 10] }],
+                      Неліпинська: [{ data: [0, 3] }],
+                      Великолучівська: [{ data: [10, 11] }],
+                      Горондівська: [{ data: [4, 4] }],
+                      Жденіївська: [{ data: [7, 8] }],
+                      Кольчинська: [{ data: [5, 5] }],
+                      Нижньоворітська: [{ data: [3, 11] }],
+                      Свалявська: [{ data: [4, 16] }],
+                      Чинадіївська: [{ data: [12, 12] }],
+                      Воловецька: [{ data: [3, 4] }],
+                    },
+                    Рахівський: {
+                      Всі: [{ data: [28, 35] }],
+                      Великобичківська: [{ data: [12, 14] }],
+                      Рахівська: [{ data: [9, 9] }],
+                      Ясінянська: [{ data: [3, 8] }],
+                      Богданська: [{ data: [4, 4] }],
+                    },
+                    Тячівський: {
+                      Всі: [{ data: [21, 82] }],
+                      "Усть-Чорнянська": [{ data: [0, 7] }],
+                      Углянська: [{ data: [0, 7] }],
+                      Вільховецька: [{ data: [6, 6] }],
+                      Нересницька: [{ data: [3, 13] }],
+                      Бедевлянська: [{ data: [0, 3] }],
+                      Тячівська: [{ data: [0, 9] }],
+                      Солотвинська: [{ data: [3, 15] }],
+                      Буштинська: [{ data: [2, 10] }],
+                      Дубівська: [{ data: [7, 7] }],
+                      Тересвянська: [{ data: [0, 5] }],
+                    },
+                    Ужгородський: {
+                      Всі: [{ data: [68, 139] }],
+                      Оноківська: [{ data: [1, 4] }],
+                      Перечинська: [{ data: [4, 7] }],
+                      "Турє-Реметівська": [{ data: [0, 12] }],
+                      Чопська: [{ data: [4, 8] }],
+                      Середнянська: [{ data: [13, 14] }],
+                      Сюртівська: [{ data: [5, 7] }],
+                      "Дубриницько-Малоберезнянська": [
+                        {
+                          data: [2, 7],
+                        },
+                      ],
+                      Костринська: [{ data: [1, 7] }],
+                      Ставненьська: [{ data: [0, 10] }],
+                      Ужгородська: [{ data: [18, 32] }],
+                      Холмківська: [{ data: [6, 6] }],
+                      Баранинська: [{ data: [0, 0] }],
+                      Великоберезнянська: [{ data: [1, 8] }],
+                      Великодобронська: [{ data: [4, 6] }],
+                    },
+                    Хустський: {
+                      Всі: [{ data: [16, 141] }],
+                      Колочавська: [{ data: [0, 6] }],
+                      Драгівська: [{ data: [0, 7] }],
+                      Керецьківська: [{ data: [0, 0] }],
+                      Зарічанська: [{ data: [0, 4] }],
+                      Синевирська: [{ data: [0, 2] }],
+                      Горінчівська: [{ data: [0, 11] }],
+                      Міжгірська: [{ data: [0, 18] }],
+                      Іршавська: [{ data: [0, 25] }],
+                      Білківська: [{ data: [10, 14] }],
+                      Вишківська: [{ data: [0, 7] }],
+                      Пилипецька: [{ data: [0, 9] }],
+                      Хустська: [{ data: [6, 32] }],
+                      Довжанська: [{ data: [0, 6] }],
+                    },
+                  },
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [
+                      {
+                        id: nanoid(),
+                        position: "1",
+                        title: "Райони",
+                        target: "district",
+
+                        subSelect: {
+                          id: nanoid(),
+                          position: "2",
+                          title: "Громади",
+                          target: "hromada",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "shelters",
+    title: "Укриття",
+    menuTitle: "Укриття",
+    type: "collapse",
+    icon: <MeetingRoom />,
+    color: "#F2C3DB",
+
+    children: [
+      {
+        id: "suitability",
+        title: "Придатність укриттів",
+        menuTitle: "Придатність укриттів",
+        type: "item",
+        url: "/cabinet/analytics/shelters/suitability",
+        target: true,
+
+        chartsGroups: [
+          {
+            title: "Загальна кількість укриттів",
+            charts: [
+              {
+                id: "a",
+                size: "s",
+                location: { x: 0, y: 0 },
+                public: true,
+                chartConfig: {
+                  options: {
+                    text: "Загальна кількість укриттів",
+                  },
+                  series: 2781,
+                  type: "single",
+                },
+              },
+              {
+                id: "b",
+                size: "lh",
+                location: { x: 4, y: 0 },
+                title: "Безперешкодність та доступність укриттів",
+                public: true,
+                chartConfig: {
+                  options: {
+                    chart: {
+                      id: "bar-chart",
+                    },
+
+                    plotOptions: {
+                      bar: {
+                        horizontal: true,
+                      },
+                    },
+
+                    xaxis: {
+                      categories: [
+                        "Придатні та доступні",
+                        "Безперешкодні, але недоступні",
+                        "Доступні, але не є безперешкодними",
+                        "Не є безперешкодними, недоступні",
+                        "Неопрацьовані",
+                      ],
+                    },
+                  },
+                  data: {
+                    Всі: {
+                      Всі: [{ data: [1125, 0, 92, 216, 1146] }],
+                    },
+                    Берігівський: {
+                      Всі: [{ data: [223, 4, 0, 48, 0] }],
+                      Великобийганська: [{ data: [9, 0, 0, 0, 0] }],
+                      Вилоцька: [{ data: [20, 0, 0, 2, 0] }],
+                      Виноградівська: [{ data: [72, 0, 0, 10, 0] }],
+                      Батівська: [{ data: [16, 3, 0, 3, 0] }],
+                      Пийтерфолівська: [{ data: [11, 0, 0, 0, 0] }],
+                      Королівська: [{ data: [19, 0, 0, 3, 0] }],
+                      Великоберезька: [{ data: [9, 0, 0, 0, 0] }],
+                      Камянська: [{ data: [0, 0, 0, 0, 0] }],
+                      Берегівська: [{ data: [48, 1, 0, 30, 0] }],
+                      Косоньска: [{ data: [0, 0, 0, 0, 0] }],
+                    },
+                    Мукачівський: {
+                      Всі: [{ data: [159, 14, 27, 67, 242] }],
+                      Івановецька: [{ data: [2, 0, 0, 0, 0] }],
+                      Полянська: [{ data: [6, 1, 0, 7, 0] }],
+                      Мукачівська: [{ data: [58, 6, 16, 13, 195] }],
+                      Верхньокоропецька: [{ data: [2, 0, 0, 1, 17] }],
+                      Неліпинська: [{ data: [1, 0, 0, 0, 0] }],
+                      Великолучівська: [{ data: [1, 0, 0, 4, 30] }],
+                      Горондівська: [{ data: [0, 0, 1, 1, 0] }],
+                      Жденіївська: [{ data: [13, 0, 0, 4, 0] }],
+                      Кольчинська: [{ data: [2, 0, 0, 2, 0] }],
+                      Нижньоворітська: [{ data: [17, 1, 0, 2, 0] }],
+                      Свалявська: [{ data: [35, 2, 5, 22, 0] }],
+                      Чинадіївська: [{ data: [1, 0, 4, 4, 0] }],
+                      Воловецька: [{ data: [21, 4, 1, 7, 0] }],
+                    },
+                    Рахівський: {
+                      Всі: [{ data: [99, 3, 51, 11, 0] }],
+                      Великобичківська: [{ data: [18, 0, 36, 1, 0] }],
+                      Рахівська: [{ data: [32, 1, 15, 8, 0] }],
+                      Ясінянська: [{ data: [29, 2, 0, 2, 0] }],
+                      Богданська: [{ data: [20, 0, 0, 0, 0] }],
+                    },
+                    Тячівський: {
+                      Всі: [{ data: [175, 4, 0, 3, 0] }],
+                      "Усть-Чорнянська": [{ data: [13, 0, 0, 0, 0] }],
+                      Углянська: [{ data: [10, 0, 0, 0, 0] }],
+                      Вільховецька: [{ data: [10, 0, 0, 0, 0] }],
+                      Нересницька: [{ data: [22, 0, 0, 0, 0] }],
+                      Бедевлянська: [{ data: [7, 0, 0, 0, 0] }],
+                      Тячівська: [{ data: [40, 3, 0, 0, 0] }],
+                      Солотвинська: [{ data: [29, 0, 0, 2, 0] }],
+                      Буштинська: [{ data: [19, 0, 0, 0, 0] }],
+                      Дубівська: [{ data: [14, 1, 0, 1, 0] }],
+                      Тересвянська: [{ data: [11, 0, 0, 0, 0] }],
+                    },
+                    Ужгородський: {
+                      Всі: [{ data: [174, 23, 11, 52, 458] }],
+                      Оноківська: [{ data: [6, 2, 0, 1, 0] }],
+                      Перечинська: [{ data: [3, 2, 0, 0, 0] }],
+                      "Турє-Реметівська": [{ data: [0, 0, 0, 0, 0] }],
+                      Чопська: [{ data: [9, 3, 0, 0, 0] }],
+                      Середнянська: [{ data: [3, 2, 0, 4, 0] }],
+                      Сюртівська: [{ data: [14, 0, 0, 1, 0] }],
+                      "Дубриницько-Малоберезнянська": [
+                        { data: [4, 0, 0, 0, 6] },
+                      ],
+                      Костринська: [{ data: [0, 1, 0, 0, 0] }],
+                      Ставненьська: [{ data: [1, 0, 0, 0, 0] }],
+                      Ужгородська: [{ data: [88, 9, 0, 38, 428] }],
+                      Холмківська: [{ data: [9, 2, 8, 2, 0] }],
+                      Баранинська: [{ data: [23, 2, 0, 0, 0] }],
+                      Великоберезнянська: [{ data: [11, 0, 3, 4, 7] }],
+                      Великодобронська: [{ data: [1, 0, 0, 2, 17] }],
+                    },
+                    Хустський: {
+                      Всі: [{ data: [324, 0, 0, 30, 0] }],
+                      Колочавська: [{ data: [11, 0, 0, 0, 0] }],
+                      Драгівська: [{ data: [14, 0, 0, 0, 0] }],
+                      Керецьківська: [{ data: [12, 0, 0, 0, 0] }],
+                      Зарічанська: [{ data: [9, 0, 0, 0, 0] }],
+                      Синевирська: [{ data: [9, 0, 0, 1, 0] }],
+                      Горінчівська: [{ data: [24, 0, 0, 2, 0] }],
+                      Міжгірська: [{ data: [40, 0, 0, 6, 0] }],
+                      Іршавська: [{ data: [68, 0, 0, 1, 0] }],
+                      Білківська: [{ data: [35, 0, 0, 0, 0] }],
+                      Вишківська: [{ data: [9, 0, 0, 5, 0] }],
+                      Пилипецька: [{ data: [8, 0, 0, 0, 0] }],
+                      Хустська: [{ data: [65, 0, 0, 15, 0] }],
+                      Довжанська: [{ data: [10, 0, 0, 0, 0] }],
+                    },
+                  },
+                  type: "bar",
+                  aditionalSetings: {
+                    singleInfo: null,
+                    filterSelects: [
+                      {
+                        id: nanoid(),
+                        position: "1",
+                        title: "Райони",
+                        target: "district",
+
+                        subSelect: {
+                          id: nanoid(),
+                          position: "2",
+                          title: "Громади",
+                          target: "hromada",
+                        },
+                      },
+                    ],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "finances",
+    title: "Фінанси",
+    menuTitle: "Фінанси",
+    type: "collapse",
+    icon: <AttachMoney />,
+    color: "#FCDD3A",
+
+    children: [
+      {
+        id: "heads-rating",
+        title: "Рейтинг голів громад",
+        menuTitle: "Рейтинг голів громад",
+        type: "item",
+        url: "/cabinet/analytics/finances/heads-rating",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "infrastructure",
+    title: "Інфраструктура",
+    menuTitle: "Інфраструктурa",
+    type: "collapse",
+    icon: <Apartment />,
+    color: "#82B2EF",
+
+    children: [
+      {
+        id: "zhkh",
+        title: "ЖКГ",
+        menuTitle: "ЖКГ",
+        type: "item",
+        url: "/cabinet/analytics/infrastructure/zhkh",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "healthcare",
+    title: "Охорона здоров'я",
+    menuTitle: "Охорона здоров'я",
+    type: "noCollapse",
+    icon: <MedicalServices />,
+    color: "#55B78E",
+
+    children: [
+      {
+        id: "all",
+        title: "Охорона здоров'я - загальна",
+        menuTitle: "Загальна",
+        type: "item",
+        url: "/cabinet/analytics/healthcare/all",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "economy",
+    title: "Економіка",
+    menuTitle: "Економіка",
+    type: "noCollapse",
+    icon: <Assessment />,
+    color: "#AAE3E3",
+
+    children: [
+      {
+        id: "all",
+        title: "Економіка - загальна",
+        menuTitle: "Загальна",
+        type: "item",
+        url: "/cabinet/analytics/economy/all",
         target: true,
       },
     ],
@@ -3215,49 +5960,49 @@ export const cabinetPages = [
         title: "єЗвернення",
         menuTitle: "єЗвернення",
         type: "item",
-        url: "/cabinet/messages/all",
+        url: "/cabinet/profile/messages/all",
         target: true,
       },
     ],
   },
-  {
-    id: "solicitations",
-    title: "єКлопотання",
-    menuTitle: "єКлопотання",
-    type: "noCollapsecollapse",
-    icon: <Subject />,
-    color: "#55A5B7",
+  // {
+  //   id: "solicitations",
+  //   title: "єКлопотання",
+  //   menuTitle: "єКлопотання",
+  //   type: "noCollapsecollapse",
+  //   icon: <Subject />,
+  //   color: "#55A5B7",
 
-    children: [
-      {
-        id: "all",
-        title: "єКлопотання",
-        menuTitle: "єКлопотання",
-        type: "item",
-        url: "/cabinet/solicitations/all",
-        target: true,
-        children: [],
-      },
-    ],
-  },
+  //   children: [
+  //     {
+  //       id: "all",
+  //       title: "єКлопотання",
+  //       menuTitle: "єКлопотання",
+  //       type: "item",
+  //       url: "/cabinet/profile/solicitations/all",
+  //       target: true,
+  //       children: [],
+  //     },
+  //   ],
+  // },
 
-  {
-    id: "petitions",
-    title: "єПетиція",
-    menuTitle: "єПетиція",
-    type: "noCollapse",
-    icon: <HowToVote />,
-    color: "#AAE3E3",
+  // {
+  //   id: "petitions",
+  //   title: "єПетиція",
+  //   menuTitle: "єПетиція",
+  //   type: "noCollapse",
+  //   icon: <HowToVote />,
+  //   color: "#AAE3E3",
 
-    children: [
-      {
-        id: "all",
-        title: "єПетиція",
-        menuTitle: "єПетиція",
-        type: "item",
-        url: "/cabinet/petitions/all",
-        target: true,
-      },
-    ],
-  },
+  //   children: [
+  //     {
+  //       id: "all",
+  //       title: "єПетиція",
+  //       menuTitle: "єПетиція",
+  //       type: "item",
+  //       url: "/cabinet/profile/petitions/all",
+  //       target: true,
+  //     },
+  //   ],
+  // },
 ];
