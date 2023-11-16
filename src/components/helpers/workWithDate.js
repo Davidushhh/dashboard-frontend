@@ -1,9 +1,6 @@
 export const dateTransformer = (dateString) => {
-  const date = new Date(dateString);
-
-  // Встановлюємо часовий пояс UTC
-  date.setTime(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
-  return date.toLocaleString();
+  const currentTime = new Date(dateString);
+  return `${currentTime.toLocaleDateString()}, ${currentTime.toLocaleTimeString()}`;
 };
 
 export const compareCreatedAt = (a, b) => {

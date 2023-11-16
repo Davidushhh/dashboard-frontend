@@ -18,8 +18,8 @@ export const cabinetApi = api.injectEndpoints({
       },
     }),
     getTables: builder.query({
-      query: ({ page, limit }) => ({
-        url: `/profile/tables/get-tables?page=${page}&limit=${limit}`,
+      query: () => ({
+        url: `/profile/tables/get-tables`,
       }),
     }),
     getTable: builder.query({

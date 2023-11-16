@@ -17,8 +17,6 @@ const TablesLayout = () => {
 
   const { currentData, isFetching, refetch } = useGetTablesQuery();
 
-  console.log(currentData);
-
   useEffect(() => {
     if (currentData) {
       let newData = [...currentData.data];
