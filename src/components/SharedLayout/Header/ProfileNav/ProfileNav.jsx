@@ -40,7 +40,7 @@ export const ProfileNav = ({
           }}
         >
           <SC.ProfileLink
-            href="/cabinet/profile/messages/all"
+            href="/cabinet/profile/messages/e-appeal"
             underline="hover"
           >
             Особистий кабінет

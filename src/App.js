@@ -6,12 +6,14 @@ import PageLayoute from "./components/MainLayout/Metrica/PageLayout/PageLayoute"
 import NotFound from "./pages/NotFound";
 import Auth from "pages/Auth";
 import CabinetPage from "pages/CabinetPage";
+import TablesLayout from "components/MainLayout/Cabinet/Tables/TablesLayout";
 
 import { useSelector } from "react-redux";
 import { useCurrentUserQuery } from "redux/API/authApi";
 import { selectToken } from "redux/auth/authSlice";
 import { RestrictedRoute } from "components/RestrictedRoute";
 import { PrivateRoute } from "components/PrivateRoute";
+import CabinetLayout from "components/MainLayout/Cabinet/CabinetLayout";
 
 function App() {
   const token = useSelector(selectToken);
@@ -85,15 +87,21 @@ function App() {
         </Route>
 
         <Route
-          path="/cabinet/profile/:page"
+          path="/cabinet/profile"
           element={
             <PrivateRoute component={<CabinetPage />} redirectTo="/login" />
           }
         >
           <Route
-            path="/cabinet/profile/:page/:sub"
+            path="messages/:sub"
             element={
-              <PrivateRoute component={<CabinetPage />} redirectTo="/login" />
+              <PrivateRoute component={<CabinetLayout />} redirectTo="/login" />
+            }
+          />
+          <Route
+            path="tables/:sub"
+            element={
+              <PrivateRoute component={<TablesLayout />} redirectTo="/login" />
             }
           />
         </Route>

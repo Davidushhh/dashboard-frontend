@@ -17,7 +17,30 @@ export const cabinetApi = api.injectEndpoints({
         };
       },
     }),
+    getTables: builder.query({
+      query: ({ page, limit }) => ({
+        url: `/profile/tables/get-tables?page=${page}&limit=${limit}`,
+      }),
+    }),
+    getTable: builder.query({
+      query: (name) => ({
+        url: `/profile/tables/get-table/${name}`,
+      }),
+    }),
+    updateTableRow: builder.mutation({
+      query: ({ tableName, id, data }) => ({
+        url: `/profile/tables/${tableName}`,
+        method: "PATCH",
+        body: { id, data },
+      }),
+    }),
   }),
 });
 
-export const { useGetUserMsgQuery, useSendAnswerMutation } = cabinetApi;
+export const {
+  useGetUserMsgQuery,
+  useSendAnswerMutation,
+  useGetTablesQuery,
+  useGetTableQuery,
+  useUpdateTableRowMutation,
+} = cabinetApi;

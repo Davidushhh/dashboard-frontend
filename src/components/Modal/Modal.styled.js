@@ -13,5 +13,5 @@ export const ModalBackdrop = styled("div")((props) => ({
   overflowY: "scroll",
   backgroundColor: "rgba(17, 17, 17, 0.6)",
   backdropFilter: "blur(10px)",
-  zIndex: "9999",
+  zIndex: "1299",
 }));

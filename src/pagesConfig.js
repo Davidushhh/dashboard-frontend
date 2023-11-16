@@ -9,6 +9,7 @@ import {
   AttachMoney,
   QueryStats,
   MailOutline,
+  BackupTable,
 } from "@mui/icons-material";
 
 import { nanoid } from "nanoid";
@@ -5953,14 +5954,35 @@ export const cabinetPages = [
     type: "noCollapse",
     icon: <MailOutline />,
     color: "#FF6931",
+    access: ["deputy", "council"],
+
+    children: [
+      {
+        id: "e-appeal",
+        title: "єЗвернення",
+        menuTitle: "єЗвернення",
+        type: "item",
+        url: "/cabinet/profile/messages/e-appeal",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "tables",
+    title: "Таблиці",
+    menuTitle: "Таблиці",
+    type: "noCollapse",
+    icon: <BackupTable />,
+    color: "#55a5b7",
+    access: [],
 
     children: [
       {
         id: "all",
-        title: "єЗвернення",
-        menuTitle: "єЗвернення",
+        title: "Таблиці",
+        menuTitle: "Таблиці",
         type: "item",
-        url: "/cabinet/profile/messages/all",
+        url: "/cabinet/profile/tables/all",
         target: true,
       },
     ],

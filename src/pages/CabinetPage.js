@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { useOutletContext } from "react-router-dom";
+import { cabinetPages } from "pagesConfig";
+
 import { Box } from "@mui/material";
 
-import CabinetLayout from "components/MainLayout/Cabinet/CabinetLayout";
+import { Outlet } from "react-router-dom";
 
-export const CabinetPage = () => {
+const CabinetPage = () => {
+  const [setSubMenu] = useOutletContext();
+
+  useEffect(() => {
+    setSubMenu(cabinetPages);
+  }, [setSubMenu]);
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "20px",
       }}
     >
-      <CabinetLayout />
+      <Outlet />
     </Box>
   );
 };
