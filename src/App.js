@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import Auth from "pages/Auth";
 import CabinetPage from "pages/CabinetPage";
 import TablesLayout from "components/MainLayout/Cabinet/Tables/TablesLayout";
+import BudgetLayout from "components/MainLayout/Cabinet/Budget/BudgetLayout";
 
 import { useSelector } from "react-redux";
 import { useCurrentUserQuery } from "redux/API/authApi";
@@ -96,6 +97,12 @@ function App() {
             path="messages/:sub"
             element={
               <PrivateRoute component={<CabinetLayout />} redirectTo="/login" />
+            }
+          />
+          <Route
+            path="budget/:sub"
+            element={
+              <PrivateRoute component={<BudgetLayout />} redirectTo="/login" />
             }
           />
           <Route

@@ -15,6 +15,7 @@ import storage from "redux-persist/lib/storage";
 import { authSlice } from "./auth/authSlice";
 import { api } from "./API/API";
 import { personSlice } from "./person/personSlice";
+import { budgetWidgetApi } from "./API/budgetWidgetApi";
 
 const persistConfig = {
   key: "token",
@@ -29,6 +30,7 @@ export const store = configureStore({
     [authSlice.name]: persistedAuthReducer,
     [api.reducerPath]: api.reducer,
     [personSlice.name]: personSlice.reducer,
+    [budgetWidgetApi.reducerPath]: budgetWidgetApi.reducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({
@@ -37,6 +39,7 @@ export const store = configureStore({
       },
     }),
     api.middleware,
+    budgetWidgetApi.middleware,
   ],
 });
 
