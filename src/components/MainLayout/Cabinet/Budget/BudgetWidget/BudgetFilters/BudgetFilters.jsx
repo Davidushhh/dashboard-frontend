@@ -16,9 +16,9 @@ export const BudgetFilters = ({
   useEffect(() => {
     if (!budgets) return;
     if (subjectType === "Область") {
-      const options = budgets.map(
-        (budget) => `${budget.budgetName} (${budget.budgetId})`
-      );
+      const options = budgets
+        .filter((budget) => budget.budgetName.includes("області"))
+        .map((budget) => `${budget.budgetName} (${budget.budgetId})`);
       setACoptions(options);
     }
     if (subjectType === "Райони") {
@@ -33,7 +33,8 @@ export const BudgetFilters = ({
         .filter(
           (budget) =>
             budget.budgetName.includes("міста") ||
-            budget.budgetName.includes("громади")
+            budget.budgetName.includes("громади") ||
+            budget.budgetName.includes("сільради")
         )
         .map((budget) => `${budget.budgetName} (${budget.budgetId})`);
       setACoptions(options);

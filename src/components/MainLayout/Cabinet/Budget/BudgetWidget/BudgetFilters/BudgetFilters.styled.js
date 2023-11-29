@@ -37,17 +37,13 @@ export const BudgetFiltersTabs = styled(Tabs)`
   }
 
   .Mui-selected {
-    color: #516696;
+    color: #516696 !important;
   }
 `;
 
 export const BudgetFiltersAutocomplete = styled(Autocomplete)``;
 
 export const AutocompleteTextField = styled(TextField)`
-  .Mui-focused {
-    color: #516696;
-  }
-
   .Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #516696;
   }

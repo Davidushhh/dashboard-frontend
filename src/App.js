@@ -53,6 +53,7 @@ function App() {
             />
           </Route>
         </Route>
+        <Route path="/analytics/finances/budget" element={<BudgetLayout />} />
 
         <Route path="404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
@@ -70,6 +71,12 @@ function App() {
         <Route
           index
           element={<Navigate to={"/cabinet/analytics/home/all"} />}
+        />
+
+        <Route
+          path="/cabinet/analytics/finances/budget"
+          element={<BudgetLayout />}
+          cabinet
         />
 
         <Route

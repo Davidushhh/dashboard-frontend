@@ -11,6 +11,7 @@ import {
   MailOutline,
   BackupTable,
   RequestQuoteOutlined,
+  TrendingUp,
 } from "@mui/icons-material";
 
 export const mainPages = [
@@ -160,11 +161,11 @@ export const metricaPages = [
 
     children: [
       {
-        id: "heads-rating",
-        title: "Рейтинг голів громад",
-        menuTitle: "Рейтинг голів громад",
+        id: "budget",
+        title: "Бюджет",
+        menuTitle: "Бюджет",
         type: "item",
-        url: "/analytics/finances/heads-rating",
+        url: "/analytics/finances/budget",
         target: true,
       },
     ],
@@ -226,7 +227,27 @@ export const metricaPages = [
       },
     ],
   },
+  {
+    id: "rating",
+    title: "Рейтинг",
+    menuTitle: "Рейтинг",
+    type: "rating",
+    icon: <TrendingUp />,
+    color: "#FCDD3A",
+
+    children: [
+      {
+        id: "heads-rating",
+        title: "Рейтинг голів громад",
+        menuTitle: "Рейтинг голів громад",
+        type: "item",
+        url: "/analytics/rating/heads-rating",
+        target: true,
+      },
+    ],
+  },
 ];
+
 export const metricaPagesCabinet = [
   {
     id: "home",
@@ -351,11 +372,11 @@ export const metricaPagesCabinet = [
 
     children: [
       {
-        id: "heads-rating",
-        title: "Рейтинг голів громад",
-        menuTitle: "Рейтинг голів громад",
+        id: "budget",
+        title: "Бюджет",
+        menuTitle: "Бюджет",
         type: "item",
-        url: "/cabinet/analytics/finances/heads-rating",
+        url: "/cabinet/analytics/finances/budget",
         target: true,
       },
     ],
@@ -413,6 +434,25 @@ export const metricaPagesCabinet = [
         menuTitle: "Загальна",
         type: "item",
         url: "/cabinet/analytics/economy/all",
+        target: true,
+      },
+    ],
+  },
+  {
+    id: "rating",
+    title: "Рейтинг",
+    menuTitle: "Рейтинг",
+    type: "rating",
+    icon: <TrendingUp />,
+    color: "#FCDD3A",
+
+    children: [
+      {
+        id: "heads-rating",
+        title: "Рейтинг голів громад",
+        menuTitle: "Рейтинг голів громад",
+        type: "item",
+        url: "/cabinet/analytics/rating/heads-rating",
         target: true,
       },
     ],

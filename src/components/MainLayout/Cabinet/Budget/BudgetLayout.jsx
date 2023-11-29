@@ -30,17 +30,23 @@ export default function BudgetLayout() {
 
   useEffect(() => {
     if (!user) return;
-    if (user.access === "oda") {
+
+    const url = window.location.href;
+
+    if (user.access === "oda" || !url.includes("/cabinet")) {
       setSubject("Закарпатської");
       setDefaultSubject("Закарпатської");
+      return;
     }
     if (user.access === "district") {
       setSubject(subjects.translate[user.district]);
       setDefaultSubject(subjects.translate[user.district]);
+      return;
     }
     if (user.access === "hromada") {
       setSubject(subjects.translate[user.hromada]);
       setDefaultSubject(subjects.translate[user.hromada]);
+      return;
     }
   }, [setDefaultSubject, setSubject, user]);
 
