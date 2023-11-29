@@ -16,6 +16,8 @@ import { RestrictedRoute } from "components/RestrictedRoute";
 import { PrivateRoute } from "components/PrivateRoute";
 import CabinetLayout from "components/MainLayout/Cabinet/CabinetLayout";
 
+console.log("hi");
+
 function App() {
   const token = useSelector(selectToken);
   useCurrentUserQuery(null, { skip: !token });
