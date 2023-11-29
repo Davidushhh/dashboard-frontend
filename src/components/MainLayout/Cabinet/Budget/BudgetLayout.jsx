@@ -1,17 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "components/MainLayout/Cabinet/Budget/BudgetWidget/open-budget-widget";
+import subjects from "components/helpers/subjectsList";
 
 import * as SCofM from "components/MainLayout/Cabinet/Messages/Messages.styled";
+import * as SC from "./BudgetLayout.styled";
 
 import { Box } from "@mui/system";
 import { BudgetFilters } from "./BudgetWidget/BudgetFilters/BudgetFilters";
 import { useGetZakBudgetQuery } from "redux/API/budgetWidgetApi";
 
 export default function BudgetLayout() {
+  const [defaultSubject, setDefaultSubject] = useState("");
   const [budgets, setBudgets] = useState([]);
   const [subject, setSubject] = useState("");
-  const widgetsContainer = useRef(null);
 
   const { currentData } = useGetZakBudgetQuery();
   const user = useSelector((state) => state.auth.user);
@@ -25,6 +27,22 @@ export default function BudgetLayout() {
       console.log("newBudgets", newBudgets);
     }
   }, [currentData, subject]);
+
+  useEffect(() => {
+    if (!user) return;
+    if (user.access === "oda") {
+      setSubject("Закарпатської");
+      setDefaultSubject("Закарпатської");
+    }
+    if (user.access === "district") {
+      setSubject(subjects.translate[user.district]);
+      setDefaultSubject(subjects.translate[user.district]);
+    }
+    if (user.access === "hromada") {
+      setSubject(subjects.translate[user.hromada]);
+      setDefaultSubject(subjects.translate[user.hromada]);
+    }
+  }, [setDefaultSubject, setSubject, user]);
 
   return (
     <Box
@@ -43,8 +61,13 @@ export default function BudgetLayout() {
             width: "100%",
           }}
         >
-          <BudgetFilters user={user} setSubject={setSubject} />
-          <Box ref={widgetsContainer}>
+          <BudgetFilters
+            user={user}
+            setSubject={setSubject}
+            budgets={currentData}
+            defaultSubject={defaultSubject}
+          />
+          <SC.BudgetWidgetWrapper>
             {budgets.length > 0 &&
               budgets.map((budget) => (
                 <open-budget-widget
@@ -58,7 +81,7 @@ export default function BudgetLayout() {
                   border-style="2,#ссс"
                 ></open-budget-widget>
               ))}
-          </Box>
+          </SC.BudgetWidgetWrapper>
         </Box>
       </SCofM.MessagesContainer>
     </Box>
