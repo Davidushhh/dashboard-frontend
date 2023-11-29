@@ -16813,8 +16813,19 @@
           var t = this,
             e = t.$createElement,
             n = t._self._c || e;
-          //hide parent component open-budget-widget
+          //hide parent component open-budget-widget  add atribute empty
           this.$parent.$el.style.display = "none";
+          //add atribute empty to parent
+          this.$parent.$el.setAttribute("empty", "");
+          //create event
+          const event = new CustomEvent("empty", {
+            bubbles: true,
+            cancelable: true,
+          });
+
+          // Dispatch the event
+          this.$parent.$el.dispatchEvent(event);
+
           return n(
             "div",
             { staticClass: "cont_principal cont_principal cont_error_active" },

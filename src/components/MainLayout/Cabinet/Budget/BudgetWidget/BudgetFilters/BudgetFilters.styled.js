@@ -59,7 +59,11 @@ export const BudgetFiltersAutocomplete = styled(Autocomplete)``;
 
 export const AutocompleteTextField = styled(TextField)`
   .Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: #516696;
+    border-color: #516696 !important;
+  }
+
+  .Mui-focused {
+    color: #516696 !important;
   }
 `;
 

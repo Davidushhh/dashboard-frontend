@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import "components/MainLayout/Cabinet/Budget/BudgetWidget/open-budget-widget";
 import subjects from "components/helpers/subjectsList";
 
-import * as SCofM from "components/MainLayout/Cabinet/Messages/Messages.styled";
+import { MessagesContainer } from "components/MainLayout/Cabinet/Messages/Messages.styled";
 import * as SC from "./BudgetLayout.styled";
 
 import { Box } from "@mui/system";
 import { BudgetFilters } from "./BudgetWidget/BudgetFilters/BudgetFilters";
 import { useGetZakBudgetQuery } from "redux/API/budgetWidgetApi";
+import { EmptyBudgetsInfoBox } from "./EmptyBudgetsInfoBox/EmptyBudgetsInfoBox";
 
 export default function BudgetLayout() {
   const [defaultSubject, setDefaultSubject] = useState("");
   const [budgets, setBudgets] = useState([]);
   const [subject, setSubject] = useState("");
+  const budgetWidgetWrapper = useRef();
 
   const { currentData } = useGetZakBudgetQuery();
   const user = useSelector((state) => state.auth.user);
@@ -28,7 +30,11 @@ export default function BudgetLayout() {
   }, [currentData, subject]);
 
   useEffect(() => {
-    if (!user) return;
+    if (!user) {
+      setSubject("Закарпатської");
+      setDefaultSubject("Закарпатської");
+      return;
+    }
 
     const url = window.location.href;
 
@@ -59,7 +65,7 @@ export default function BudgetLayout() {
         gap: "20px",
       }}
     >
-      <SCofM.MessagesContainer>
+      <MessagesContainer>
         <Box
           sx={{
             height: "100%",
@@ -72,7 +78,7 @@ export default function BudgetLayout() {
             budgets={currentData}
             defaultSubject={defaultSubject}
           />
-          <SC.BudgetWidgetWrapper>
+          <SC.BudgetWidgetWrapper ref={budgetWidgetWrapper}>
             {budgets.length > 0 &&
               budgets.map((budget) => (
                 <open-budget-widget
@@ -87,8 +93,9 @@ export default function BudgetLayout() {
                 ></open-budget-widget>
               ))}
           </SC.BudgetWidgetWrapper>
+          <EmptyBudgetsInfoBox widgetWrapper={budgetWidgetWrapper} />
         </Box>
-      </SCofM.MessagesContainer>
+      </MessagesContainer>
     </Box>
   );
 }
