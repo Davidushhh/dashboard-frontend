@@ -22,7 +22,6 @@ export const BudgetFilters = ({
       setACoptions(options);
     }
     if (subjectType === "Райони") {
-      console.log("budgets", subjectType);
       const options = budgets
         .filter((budget) => budget.budgetName.includes("району"))
         .map((budget) => `${budget.budgetName} (${budget.budgetId})`);
@@ -53,8 +52,6 @@ export const BudgetFilters = ({
     value = value.replace(/\s\(.+\)$/, "");
     setSubject(value.trim());
   };
-
-  console.log("subjectType", subjectType);
 
   return (
     <SC.BudgetFiltersWrapper>

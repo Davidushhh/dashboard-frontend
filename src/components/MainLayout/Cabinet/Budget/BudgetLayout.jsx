@@ -24,7 +24,6 @@ export default function BudgetLayout() {
         budget.budgetName.includes(subject)
       );
       setBudgets(newBudgets);
-      console.log("newBudgets", newBudgets);
     }
   }, [currentData, subject]);
 
