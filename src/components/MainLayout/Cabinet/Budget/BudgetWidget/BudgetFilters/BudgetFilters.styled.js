@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 
-import { Box, Tabs, Typography, Autocomplete, TextField } from "@mui/material";
+import {
+  Box,
+  Tabs,
+  Typography,
+  Autocomplete,
+  Switch,
+  TextField,
+} from "@mui/material";
 
 export const BudgetFiltersWrapper = styled(Box)`
   padding: 16px;
@@ -39,6 +46,13 @@ export const BudgetFiltersTabs = styled(Tabs)`
   .Mui-selected {
     color: #516696 !important;
   }
+
+  .MuiButtonBase-root.MuiTab-root {
+    @media (max-width: 400px) {
+      font-size: 0.7rem;
+      min-width: auto;
+    }
+  }
 `;
 
 export const BudgetFiltersAutocomplete = styled(Autocomplete)``;
@@ -46,5 +60,15 @@ export const BudgetFiltersAutocomplete = styled(Autocomplete)``;
 export const AutocompleteTextField = styled(TextField)`
   .Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #516696;
+  }
+`;
+
+export const BudgetFiltersSwitch = styled(Switch)`
+  .Mui-checked {
+    color: #516696 !important;
+  }
+
+  .Mui-checked + .MuiSwitch-track {
+    background-color: #516696 !important;
   }
 `;

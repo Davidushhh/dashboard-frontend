@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as SC from "./BudgetFilters.styled";
 
 // import subjects from "components/helpers/subjectsList";
-import { Box, Tab } from "@mui/material";
+import { Box, Tab, FormControlLabel } from "@mui/material";
 
 export const BudgetFilters = ({
   user,
@@ -53,6 +53,23 @@ export const BudgetFilters = ({
     setSubject(value.trim());
   };
 
+  const shownEmptyHandler = (event, value) => {
+    if (value) {
+      const widgets = document.querySelectorAll(".open-budget-widget");
+      widgets.forEach((widget) => {
+        widget.style.display = "flex";
+      });
+    }
+    if (!value) {
+      const widgets = document.querySelectorAll(".open-budget-widget");
+      widgets.forEach((widget) => {
+        if (widget.querySelector(".cont_error")) {
+          widget.style.display = "none";
+        }
+      });
+    }
+  };
+
   return (
     <SC.BudgetFiltersWrapper>
       <Box sx={{ display: "flex", justifyContent: "flex-start", pb: "12px" }}>
@@ -79,6 +96,13 @@ export const BudgetFilters = ({
             <SC.AutocompleteTextField {...params} label="Пошук по назві" />
           )}
           onChange={autocompleteHandler}
+        />
+      </Box>
+      <Box>
+        <FormControlLabel
+          onChange={shownEmptyHandler}
+          control={<SC.BudgetFiltersSwitch />}
+          label="Показати пусті бюджети"
         />
       </Box>
     </SC.BudgetFiltersWrapper>
