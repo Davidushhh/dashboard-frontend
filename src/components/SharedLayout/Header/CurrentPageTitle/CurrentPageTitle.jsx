@@ -18,13 +18,21 @@ export const CurrentPageTitle = ({ open, subMenu }) => {
         : prevPage?.children?.find(
             (elem) => elem.id === Object.values(params)[i]
           );
+
       if (!prevPage) {
-        title = "404";
+        if (window.location.pathname.includes("/finances/budget")) {
+          title = "Бюджет";
+          setCurrentPage(title);
+        } else {
+          title = "404";
+        }
         // navigate("/404");
+
         return;
       } else {
         title = prevPage.title;
       }
+
       if (prevPage && i === Object.keys(params).length - 1)
         setCurrentPage(title);
     }

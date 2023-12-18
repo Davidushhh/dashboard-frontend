@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useOutletContext } from "react-router-dom";
+import { metricaPages, metricaPagesCabinet } from "pagesConfig";
+
 import { useSelector } from "react-redux";
 import "components/MainLayout/Cabinet/Budget/BudgetWidget/open-budget-widget";
 import subjects from "components/helpers/subjectsList";
@@ -10,15 +13,27 @@ import { Box } from "@mui/system";
 import { BudgetFilters } from "./BudgetWidget/BudgetFilters/BudgetFilters";
 import { useGetZakBudgetQuery } from "redux/API/budgetWidgetApi";
 import { EmptyBudgetsInfoBox } from "./EmptyBudgetsInfoBox/EmptyBudgetsInfoBox";
+import { selectPerson } from "redux/person/personSlice";
 
 export default function BudgetLayout() {
+  const [setSubMenu] = useOutletContext();
+
   const [defaultSubject, setDefaultSubject] = useState("");
   const [budgets, setBudgets] = useState([]);
   const [subject, setSubject] = useState("");
   const budgetWidgetWrapper = useRef();
+  const person = useSelector(selectPerson);
 
   const { currentData } = useGetZakBudgetQuery();
   const user = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    if (person === "cabinet") {
+      setSubMenu(metricaPagesCabinet);
+    } else {
+      setSubMenu(metricaPages);
+    }
+  }, [person, setSubMenu]);
 
   useEffect(() => {
     if (currentData && subject.length > 0) {
