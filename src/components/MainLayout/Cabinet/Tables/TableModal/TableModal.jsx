@@ -15,7 +15,9 @@ import {
 import {
   useGetTableQuery,
   useUpdateTableRowMutation,
+  useExportCSVMutation,
 } from "redux/API/cabinetApi";
+import { textFileDownload } from "components/helpers";
 
 const editebleColumns = {
   comment: {
@@ -44,6 +46,7 @@ export default function TableModal({ table }) {
 
   const { currentData } = useGetTableQuery(table.tableName);
   const [updateTableRow] = useUpdateTableRowMutation();
+  const [exportCSV] = useExportCSVMutation();
 
   useEffect(() => {
     const handleEditClick = (id) => () => {
@@ -174,6 +177,20 @@ export default function TableModal({ table }) {
     setRowModesModel(newRowModesModel);
   };
 
+  const onExportCSVClick = async () => {
+    try {
+      const response = await exportCSV({
+        tableName: table.tableName,
+        data: rows,
+      });
+
+      const csvText = await response.data.data;
+      textFileDownload(csvText, table.tableName);
+    } catch (error) {
+      console.error("Error exporting CSV:", error);
+    }
+  };
+
   return (
     <SC.TablesModal
       sx={{
@@ -187,6 +204,10 @@ export default function TableModal({ table }) {
         },
       }}
     >
+      <SC.TableTitle variant="h6" component="h2">
+        {table.serviceName_cyrillic}
+      </SC.TableTitle>
+
       <SC.TableGrid
         apiRef={apiRef}
         autosizeOptions={{
@@ -205,6 +226,10 @@ export default function TableModal({ table }) {
           toolbar: { setRows, setRowModesModel },
         }}
       />
+
+      <SC.ExportButton variant="outlined" onClick={onExportCSVClick}>
+        Експорт таблиці в CSV
+      </SC.ExportButton>
     </SC.TablesModal>
   );
 }

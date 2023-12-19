@@ -34,6 +34,13 @@ export const cabinetApi = api.injectEndpoints({
         body: { id, data },
       }),
     }),
+    exportCSV: builder.mutation({
+      query: ({ tableName, id, data }) => ({
+        url: `/profile/tables/create-csv/${tableName}`,
+        method: "POST",
+        body: data,
+      }),
+    }),
   }),
 });
 
@@ -43,4 +50,5 @@ export const {
   useGetTablesQuery,
   useGetTableQuery,
   useUpdateTableRowMutation,
+  useExportCSVMutation,
 } = cabinetApi;
