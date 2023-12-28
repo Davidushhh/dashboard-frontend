@@ -23,11 +23,11 @@ export default function BudgetLayout() {
   const [subject, setSubject] = useState("");
   const budgetWidgetWrapper = useRef();
   const person = useSelector(selectPerson);
-
   const { currentData } = useGetZakBudgetQuery();
   const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
+    if (!setSubMenu) return;
     if (person === "cabinet") {
       setSubMenu(metricaPagesCabinet);
     } else {
@@ -43,16 +43,13 @@ export default function BudgetLayout() {
       setBudgets(newBudgets);
     }
   }, [currentData, subject]);
-
   useEffect(() => {
     if (!user) {
       setSubject("Закарпатської");
       setDefaultSubject("Закарпатської");
       return;
     }
-
     const url = window.location.href;
-
     if (user.access === "oda" || !url.includes("/cabinet")) {
       setSubject("Закарпатської");
       setDefaultSubject("Закарпатської");
@@ -69,7 +66,6 @@ export default function BudgetLayout() {
       return;
     }
   }, [setDefaultSubject, setSubject, user]);
-
   return (
     <Box
       sx={{

@@ -105,21 +105,37 @@ function App() {
           <Route
             path="messages/:sub"
             element={
-              <PrivateRoute component={<CabinetLayout />} redirectTo="/login" />
+              <PrivateRoute
+                component={<CabinetLayout />}
+                access={["council", "deputy"]}
+                redirectTo="/login"
+                accessDeniedRedirectTo="/cabinet/profile/404/not-found"
+              />
             }
           />
           <Route
             path="budget/:sub"
             element={
-              <PrivateRoute component={<BudgetLayout />} redirectTo="/login" />
+              <PrivateRoute
+                component={<BudgetLayout />}
+                access={["council", "deputy"]}
+                redirectTo="/login"
+                accessDeniedRedirectTo="/cabinet/profile/404/not-found"
+              />
             }
           />
           <Route
             path="tables/:sub"
             element={
-              <PrivateRoute component={<TablesLayout />} redirectTo="/login" />
+              <PrivateRoute
+                component={<TablesLayout />}
+                access={[]}
+                redirectTo="/login"
+                accessDeniedRedirectTo="/cabinet/profile/404/not-found"
+              />
             }
           />
+          <Route path="404/:sub" element={<NotFound />} />
         </Route>
 
         <Route path="404" element={<NotFound />} />

@@ -38,7 +38,7 @@ export const MobileProfileMenu = ({ mobileMenuId }) => {
 
   const ProfileLinKHandler = () => {
     handleClose();
-    navigate("/cabinet/profile/messages/e-appeal");
+    navigate("/cabinet/profile");
   };
 
   return (

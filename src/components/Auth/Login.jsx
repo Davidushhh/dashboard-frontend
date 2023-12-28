@@ -16,7 +16,7 @@ export const Login = () => {
     onSubmit: async (values) => {
       try {
         await login(values).unwrap();
-        navigate("/cabinet/profile/messages/e-appeal");
+        navigate("/cabinet/profile/");
       } catch (error) {
         console.log(error);
       }

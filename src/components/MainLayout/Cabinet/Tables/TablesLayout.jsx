@@ -15,7 +15,9 @@ const TablesLayout = () => {
 
   // const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const { currentData, isFetching, refetch } = useGetTablesQuery();
+  const { currentData, isFetching, refetch } = useGetTablesQuery(null, {
+    refetchOnMountOrArgChange: true,
+  });
 
   useEffect(() => {
     if (currentData) {

@@ -5,10 +5,12 @@ import { cabinetPages } from "pagesConfig";
 
 import { Box } from "@mui/material";
 
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
+import { WelcomePage } from "components/MainLayout/Cabinet/WelcomePage/WelcomePage";
 
 const CabinetPage = () => {
   const [setSubMenu] = useOutletContext();
+  const params = useParams();
 
   useEffect(() => {
     setSubMenu(cabinetPages);
@@ -20,9 +22,15 @@ const CabinetPage = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        height: "100%",
+        flex: 1,
       }}
     >
-      <Outlet />
+      {Object.keys(params).length === 0 ? (
+        <WelcomePage />
+      ) : (
+        <Outlet context={[]} />
+      )}
     </Box>
   );
 };
