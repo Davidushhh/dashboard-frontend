@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import List from "@mui/material/List";
 
 import { NavColapse } from "../NavColapse/NavColapse";
 import { NavNoColapse } from "../NavNoColapse/NavNoColapse";
 import { useSelector } from "react-redux";
 
-export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
+export const NavList = ({ open, setOpen, navRoutes, subMenu, mainNav }) => {
   const [currentNav, setCurrentNav] = useState("");
+  const [currentSubNav, setCurrentSubNav] = useState([]);
   const user = useSelector((state) => state.auth.user);
 
-  const hasAccess = (userPosition, access) => {
-    if (!access || access.length === 0) return true;
-    return access.includes(userPosition);
-  };
+  useEffect(() => {
+    const filtredSubMenu = subMenu?.filter((item) => {
+      const access = item.access;
+      if (!access || access.length === 0) return true;
+      return access.includes(user?.position);
+    });
 
-  if (subMenu)
+    setCurrentSubNav(filtredSubMenu);
+  }, [subMenu, user]);
+
+  if (currentSubNav && currentSubNav.length > 0)
     return (
       <List
+        ref={mainNav}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -24,10 +31,9 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
           // padding: "12px 0px 12px 20px",
         }}
       >
-        {subMenu.map(
+        {currentSubNav?.map(
           ({ id, color, menuTitle, type, icon, children, url, access }) =>
-            hasAccess(user?.position, access) &&
-            (type === "collapse" ? (
+            type === "collapse" ? (
               <NavColapse
                 key={id}
                 id={id}
@@ -56,7 +62,7 @@ export const NavList = ({ open, setOpen, navRoutes, subMenu }) => {
                 children={children}
                 setCurrentNav={setCurrentNav}
               />
-            ))
+            )
         )}
       </List>
     );

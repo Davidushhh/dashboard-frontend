@@ -34,6 +34,7 @@ export const mainPagesCabinet = [
     type: "noCollapse",
     icon: <QueryStats />,
     color: "#FF6931",
+    access: ["deputy", "council"],
   },
 ];
 

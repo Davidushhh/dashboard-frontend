@@ -10,6 +10,7 @@ import { mainPages, mainPagesCabinet } from "pagesConfig";
 
 export default function MiniDrawer({ person, open, setOpen, subMenu }) {
   const params = useParams();
+  const mainNav = React.useRef();
 
   return (
     <SC.Drawer
@@ -19,22 +20,25 @@ export default function MiniDrawer({ person, open, setOpen, subMenu }) {
     >
       <Box>
         <NavList
+          mainNav={mainNav}
           open={open}
           setOpen={setOpen}
           navRoutes={params}
           subMenu={person === "cabinet" ? mainPagesCabinet : mainPages}
         />
 
-        <Divider
-          sx={{
-            height: "3px",
-            backgroundColor: "#000",
-            borderRadius: "20px",
-            margin: "10px 0px",
-            marginLeft: "10px",
-            marginRight: "10px",
-          }}
-        />
+        {mainNav?.current && (
+          <Divider
+            sx={{
+              height: "3px",
+              backgroundColor: "#000",
+              borderRadius: "20px",
+
+              marginLeft: "10px",
+              marginRight: "10px",
+            }}
+          />
+        )}
 
         <NavList
           open={open}
